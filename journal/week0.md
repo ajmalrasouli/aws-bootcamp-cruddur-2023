@@ -169,4 +169,6 @@ https://lucid.app/lucidchart/d9649fda-e579-4971-a256-e3ddf6fdb17e/edit?viewport_
 
 ![week 0 Cruddur Logical Diagram](https://user-images.githubusercontent.com/88502375/219493282-5213350c-68a3-4d49-8b3c-cef05406795e.jpeg)
 
-
+### References
+Basic writing and formatting syntax in Github
+https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
