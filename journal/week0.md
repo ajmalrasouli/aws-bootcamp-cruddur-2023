@@ -1,6 +1,8 @@
 # Week 0 — Billing and Architecture
 
-## Accounts
+## Required Homework/Tasks
+
+## Create Accounts
 -------------------------
 
 1. Registered an account with the following online cloud services:
@@ -23,7 +25,7 @@ Created MFA for root and new user. But, only created Access Key for the new user
 
 ![image](https://user-images.githubusercontent.com/88502375/219152913-619663a3-e40b-4ad0-9381-2d969a1274a3.png)
 
-
+### Install abd confirm AWS CLI
 
 Installed AWS CLI on GitPod and windows OS.
 ```bash
@@ -75,7 +77,7 @@ https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
 }
 ```
 
-## Install AWS CLI
+
 
 on Windows
 I installed the AWS CLI for Windows 10 via command in **Command Prompt**:
@@ -132,8 +134,7 @@ gp env AWS_SECRET_ACCESS_KEY=74545345435yGSHF3H8/iwfLA4YCX/Udzn1bVz
 gp env AWS_DEFAULT_REGION=us-east-1
 ```
 
-
-## AWS Budgets, AWS Cost Explorer, Billing Alarms
+### Create a Budget
 
 AWS Budgets is the simplest way to monitor your AWS spend and be alerted when you exceed or are forecasted to exceed your desired spending limit.
 
@@ -144,25 +145,26 @@ I have set my Billing alarm to $5.00.
 
 ![image](https://user-images.githubusercontent.com/88502375/219152725-74e24cc5-e130-4721-b719-267f76db377d.png)
 
-### The AWS Well-Architected Tool
+#### The AWS Well-Architected Tool
 The AWS Well-Architected Tool is designed to help us review the state of our applications and workloads against architectural best practices, identify opportunities for improvement, and track progress over time.
 
 ![image](https://user-images.githubusercontent.com/88502375/219160553-36ac068a-acb9-4a16-a253-cc9d031cf96c.png)
 
 ![image](https://user-images.githubusercontent.com/88502375/219160778-981545fb-71b3-4d1c-95f7-4f14eeceb1a7.png)
 
-### Cruddur Conceptual Diagram using Lucid
+#### Cruddur Conceptual Diagram using Lucid
 https://lucid.app/lucidchart/18f1cd83-e869-494e-9a3b-55c956e6f8c6/edit?invitationId=inv_1211e7d2-aeb6-4d38-b083-aa9e400d35dc
 
 ![image](https://user-images.githubusercontent.com/88502375/219166184-bf55ea4a-5d7f-43be-9323-0c4c5a0eac4d.png)
 
 
-### Cruddur Conceptual Napkin Diagram
+#### Cruddur Conceptual Napkin Diagram
 
 ![Napkin Diagram](assets/week%200%20Cruddur%20Conceptual%20Napkin%20Diagram.jpg)
 
 
-### Cruddur Logical Diagram
+### Recreate Logical Architecture Design
+
 https://lucid.app/lucidchart/d9649fda-e579-4971-a256-e3ddf6fdb17e/edit?viewport_loc=-780%2C-2622%2C3328%2C1548%2C0_0&invitationId=inv_2884eefe-6857-41b6-8ee1-2999303ddbd5
 
 ![week 0 Cruddur Logical Diagram](https://user-images.githubusercontent.com/88502375/219493282-5213350c-68a3-4d49-8b3c-cef05406795e.jpeg)
