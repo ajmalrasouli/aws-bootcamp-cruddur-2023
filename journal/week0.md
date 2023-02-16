@@ -78,6 +78,10 @@ https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html
 ## Install AWS CLI
 
 on Windows
+I installed the AWS CLI for Windows 10 via command in **Command Prompt**:
+
+I followed the instructions on the [AWS CLI Install Documentation Page](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 #### PS C:\Windows\system32> msiexec.exe /i https://awscli.amazonaws.com/AWSCLIV2-2.0.30.msi
 #### PS C:\Windows\system32> aws --version
 #### aws-cli/2.9.22 Python/3.9.11 Windows/10 exe/AMD64 prompt/off
