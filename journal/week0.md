@@ -145,20 +145,20 @@ I have set my Billing alarm to $5.00.
 
 ![image](https://user-images.githubusercontent.com/88502375/219152725-74e24cc5-e130-4721-b719-267f76db377d.png)
 
-#### The AWS Well-Architected Tool
+### The AWS Well-Architected Tool
 The AWS Well-Architected Tool is designed to help us review the state of our applications and workloads against architectural best practices, identify opportunities for improvement, and track progress over time.
 
 ![image](https://user-images.githubusercontent.com/88502375/219160553-36ac068a-acb9-4a16-a253-cc9d031cf96c.png)
 
 ![image](https://user-images.githubusercontent.com/88502375/219160778-981545fb-71b3-4d1c-95f7-4f14eeceb1a7.png)
 
-#### Cruddur Conceptual Diagram using Lucid
+### Cruddur Conceptual Diagram using Lucid
 https://lucid.app/lucidchart/18f1cd83-e869-494e-9a3b-55c956e6f8c6/edit?invitationId=inv_1211e7d2-aeb6-4d38-b083-aa9e400d35dc
 
 ![image](https://user-images.githubusercontent.com/88502375/219166184-bf55ea4a-5d7f-43be-9323-0c4c5a0eac4d.png)
 
 
-#### Cruddur Conceptual Napkin Diagram
+### Cruddur Conceptual Napkin Diagram
 
 ![Napkin Diagram](assets/week%200%20Cruddur%20Conceptual%20Napkin%20Diagram.jpg)
 
