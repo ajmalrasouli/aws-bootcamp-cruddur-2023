@@ -53,7 +53,8 @@ tasks:
 ```
 ## Launching AWS CloudShell and looking at AWS CLI
 
-![image](https://user-images.githubusercontent.com/88502375/219159681-5521aaad-41aa-4cb9-a620-30e7aa1b0cc4.png)
+![image](https://user-images.githubusercontent.com/88502375/219484865-cb4088a1-3cb3-4dbe-926c-dfd7860de768.png)
+
 
 #### visit site for more cli commands: Command Line Interface - AWS CLI
 docs.aws.amazon.com/cli/latest/reference or for version 2
