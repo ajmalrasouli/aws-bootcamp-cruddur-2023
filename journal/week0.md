@@ -150,7 +150,9 @@ https://lucid.app/lucidchart/18f1cd83-e869-494e-9a3b-55c956e6f8c6/edit?invitatio
 
 
 ### Cruddur Conceptual Napkin Diagram
-<img src="https://user-images.githubusercontent.com/88502375/219174772-ac046682-7592-4703-bcbe-f1b3e3da6f7b.jpg"  width="30%" height="30%">
+
+![Napkin Diagram](assets/week%200%20Cruddur%20Conceptual%20Napkin%20Diagram.jpg)
+
 
 ### Cruddur Logical Diagram
 https://lucid.app/publicSegments/view/fcae79c0-9f4f-4e8b-96a5-2c4389cf5425
