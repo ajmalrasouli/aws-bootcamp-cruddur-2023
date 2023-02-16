@@ -163,8 +163,8 @@ https://lucid.app/lucidchart/18f1cd83-e869-494e-9a3b-55c956e6f8c6/edit?invitatio
 
 
 ### Cruddur Logical Diagram
-https://lucid.app/publicSegments/view/fcae79c0-9f4f-4e8b-96a5-2c4389cf5425
-![image](https://user-images.githubusercontent.com/88502375/219175602-56df3028-0560-411f-9f4a-2fd1dd0c84df.png)
+https://lucid.app/lucidchart/d9649fda-e579-4971-a256-e3ddf6fdb17e/edit?viewport_loc=-780%2C-2622%2C3328%2C1548%2C0_0&invitationId=inv_2884eefe-6857-41b6-8ee1-2999303ddbd5
 
+![week 0 Cruddur Logical Diagram](https://user-images.githubusercontent.com/88502375/219493282-5213350c-68a3-4d49-8b3c-cef05406795e.jpeg)
 
 
