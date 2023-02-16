@@ -136,6 +136,9 @@ gp env AWS_DEFAULT_REGION=us-east-1
 ## AWS Budgets, AWS Cost Explorer, Billing Alarms
 
 AWS Budgets is the simplest way to monitor your AWS spend and be alerted when you exceed or are forecasted to exceed your desired spending limit.
+
+I have set my Billing alarm to $5.00.
+
 ![image](https://user-images.githubusercontent.com/88502375/219152429-77110dff-55e6-45ee-ac63-29d950f2941f.png)
 
 ![image](https://user-images.githubusercontent.com/88502375/219152725-74e24cc5-e130-4721-b719-267f76db377d.png)
