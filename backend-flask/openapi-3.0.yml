@@ -151,7 +151,7 @@ paths:
   /api/activities/notifications:
     get:
       description: 'Return a feed of activity for all of those that I follow'
-      - tags:
+      tags:
         - activities
       parameters: []
       responses:
@@ -159,7 +159,7 @@ paths:
           description: Return an array of activities
           content:
             application/json:
-              schemas
+              schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Activity'
