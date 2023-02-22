@@ -7,13 +7,13 @@
 
 ### Gitpod
 #### Up to 50 hours of usage/month
-![Gitpod workspace](/assets/week-1-gitpod-workspace.jpg)
+![Gitpod workspace](assets/week-1-gitpod-workspace.jpg)
 
 
 
 ### GitHub Codespaces
 #### Up to 60 hours of usage/month
-!Github workspace](assets/week-1-codespaces-workspace.jpg)
+![Github workspace](assets/week-1-codespaces-workspace.jpg)
 
 
 ### AWS Cloud9: I am not using AWS Cloud9 
