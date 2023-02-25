@@ -80,7 +80,17 @@ the bill will be there so, make sure to avoid.
 
 
 #### Use multi-stage building for a Dockerfile build
+What are the benefits of multi-stage builds in Docker?
+Some of the benefits of having multi-stage builds in Docker are as follows:
 
+1. Multi-stage builds are ideal for deploying production-ready applications.
+2. Multi-stage builds work with only one Dockerfile.
+3. It allows us to build smaller images, and Dockerfile separates them into various build stages.
+4. We have a uniform syntax to learn.
+5. Muti-stage builds work on local machines as well as on the CI (Continuous Integration) server.
+6. The multi-stage builds usually work with only one Dockerfile. In this Dockerfile, we use multiple FROM statements to define various stages of builds.
+7. Using multi-stage builds, we can limit the size of the image we create. In single-stage builds, with each instruction executed, a new layer gets added to the image, making it bulky.
+8. With multi-stage builds, we can name a particular stage, stop the build at a specific stage, use an external image, or switch between stages.
 
 #### Implement a health check in the V3 Docker compose file
 #### Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
