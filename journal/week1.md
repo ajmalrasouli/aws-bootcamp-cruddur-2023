@@ -220,7 +220,25 @@ FROM gcr.io/distroless/static-debian10
 COPY --from=builder /my-go-app/app-service /bin/app-service
 ENTRYPOINT ["/bin/app-service"]
 ```
-#### Learn how to install Docker on your local machine and get the same containers running outside of Gitpod / Codespaces
-
 
 #### Launch an EC2 instance that has docker installed, and pull a container to demonstrate you can run your own docker processes. 
+```
+sudo yum update -y
+sudo amazon-linux-extras install docker
+sudo service docker start
+sudo usermod -aG docker ec2-user
+sudo docker build -t hello-world .
+docker run -t -i -p 80:80 hello-world
+```
+
+
+![week-1-awsec2-1](https://user-images.githubusercontent.com/88502375/221381063-af5502e4-070d-4661-95da-3a659565dcbd.jpg)
+
+![week-1-awsec2-2](https://user-images.githubusercontent.com/88502375/221381068-4ac3f56e-a530-4776-9967-08b761118050.jpg)
+
+![week-1-awsec2-3](https://user-images.githubusercontent.com/88502375/221381076-26640d01-806b-4c84-b8c2-a9734c60cb49.jpg)
+
+![week-1-awsec2-4](https://user-images.githubusercontent.com/88502375/221381079-d9aa03fd-4e6b-40bd-8db2-3344aa26a37b.jpg)
+
+
+
