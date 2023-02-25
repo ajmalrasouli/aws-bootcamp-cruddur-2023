@@ -63,10 +63,45 @@ the bill will be there so, make sure to avoid.
 - docker daemon – Having listened for Docker API requests, the Docker daemon (dockerd) manages Docker objects. These include networks, volumes, containers, and images. It also communicates with other daemons when managing Docker services.
 - docker Images – A read-only template, an image has instructions that are used to create a Docker container. Many times, images are based on other images and carry some degree of customization. An image-based on ubuntu can install the Apache web server, your application, and the configuration details that the application needs to run.
 
+#### Setup Postgres 
+Postgres is “a powerful, open-source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.”
+
+Like other relational databases, you can model almost any data and its relationships using tables, keys, constraints, triggers, and more!
+
+Postgres is currently used in production by many modern technology companies, be it small startups or large organizations such as Apple, Instagram, Twitch, and Reddit.
+
+```
+#Create the file repository configuration:
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+#Import the repository signing key:
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
+#Update the package lists:
+sudo apt-get update
+
+#Install the latest version of PostgreSQL.
+#If you want a specific version, use 'postgresql-12' or similar instead of 'postgresql':
+sudo apt-get -y install postgresql
+```
+
+
+![postgres setup](assets/week-1-postgres-1.jpg)
+![postgres setup](assets/week-1-postgres-2.jpg)
+![postgres setup](assets/week-1-postgres-3.jpg)
+
 
 ## Homework Challenges
 
 #### Run the dockerfile CMD as an external script
+Assuming that your docker container is up and running, you can run commands as:
+```
+#docker exec mycontainer /bin/sh -c "cmd1;cmd2;...;cmdn"
+docker exec ea660ec256cf /bin/sh -c "echo 'Hello world'"
+```
+![Sample CMD script](https://user-images.githubusercontent.com/88502375/221377944-ac1bd70d-6b7c-4600-893f-06716b0494cc.png)
+
+
 #### Push and tag a image to DockerHub
 
 - Create a docker hub account. 
@@ -83,6 +118,7 @@ the bill will be there so, make sure to avoid.
 What are the benefits of multi-stage builds in Docker?
 Some of the benefits of having multi-stage builds in Docker are as follows:
 
+
 1. Multi-stage builds are ideal for deploying production-ready applications.
 2. Multi-stage builds work with only one Dockerfile.
 3. It allows us to build smaller images, and Dockerfile separates them into various build stages.
@@ -92,7 +128,99 @@ Some of the benefits of having multi-stage builds in Docker are as follows:
 7. Using multi-stage builds, we can limit the size of the image we create. In single-stage builds, with each instruction executed, a new layer gets added to the image, making it bulky.
 8. With multi-stage builds, we can name a particular stage, stop the build at a specific stage, use an external image, or switch between stages.
 
+```
+# 1 choose a compiler OS
+FROM golang:alpine AS builder
+# 2 (optional) label the compiler image
+LABEL stage=builder
+# 3 (optional) install any compiler-only dependencies
+RUN apk add --no-cache gcc libc-dev
+WORKDIR /workspace
+# 4 copy all the source files
+COPY . .
+# 5 build the GO program
+RUN CGO_ENABLED=0 GOOS=linux go build -a
+# 6 choose a runtime OS
+FROM alpine AS final
+# 7 
+ARG ENV
+WORKDIR /
+# 8 copy from builder the GO executable file
+COPY --from=builder /workspace/mygoexecutable .
+COPY --from=builder /workspace/_envs/env_$ENV.yaml ./_envs/
+# 9 execute the program upon start 
+CMD [ "./mygoexecutable" ]
+```
 #### Implement a health check in the V3 Docker compose file
+To identify potential software bugs as early as possible, Docker health checks can be implemented quickly. Consider adding a health check to your next Dockerfile.
+
+It is easier to diagnose a misbehaving container when it is marked with the HEALTHCHECK instruction. The reliability of the workload can be analyzed irrespective of the container's "running" status.
+
+All commands that issue an exit code of 0 or 1 are compatible with health checks.
+
+A docker health check is a command used to test the health of a container. Health checks help ensure that a container is running as expected and can be used to prevent or diagnose problems.
+
+Healthcheck Code:
+```
+FROM nginx
+COPY index.html /usr/share/nginx/html/index.html
+HEALTHCHECK CMD curl --fail http://localhost:80
+```
+
+
 #### Research best practices of Dockerfiles and attempt to implement it in your Dockerfile
+list of Docker security best practices
+
+#1 Avoid unnecessary privileges
+#Rootless containers
+
+```
+FROM alpine:3.12
+# Create user and set ownership and permissions as required
+RUN adduser -D myuser && chown -R myuser /myapp-data
+# ... copy application files
+USER myuser
+ENTRYPOINT ["/myapp"]
+```
+
+
+#2 Don’t bind to a specific UID
+```
+...
+RUN mkdir /myapp-tmp-dir && chown -R myuser /myapp-tmp-dir
+USER myuser
+ENTRYPOINT ["/myapp"]
+```
+
+#3 Make executables owned by root and not writable
+It is a Dockerfile best practice for every executable in a container to be owned by the root user, even if it is executed by a non-root user and should not be world-writable.
+
+```
+WORKDIR $APP_HOME
+COPY --chown=app:app app-files/ /app
+USER app
+ENTRYPOINT /app/my-app-entrypoint.sh
+```
+
+#4 Reduce attack surface
+It is a Dockerfile best practice to keep the images minimal.
+Avoid including unnecessary packages or exposing ports to reduce the attack surface. The more components you include inside a container, the more exposed your system will be and the harder it is to maintain, especially for components not under your control.
+
+#5 Multistage builds
+Make use of multistage building features to have reproducible builds inside containers.
+
+```
+#This is the "builder" stage
+FROM golang:1.15 as builder
+WORKDIR /my-go-app
+COPY app-src .
+RUN GOOS=linux GOARCH=amd64 go build ./cmd/app-service
+#This is the final stage, and we copy artifacts from "builder"
+FROM gcr.io/distroless/static-debian10
+COPY --from=builder /my-go-app/app-service /bin/app-service
+ENTRYPOINT ["/bin/app-service"]
+```
 #### Learn how to install Docker on your local machine and get the same containers running outside of Gitpod / Codespaces
+
+
 #### Launch an EC2 instance that has docker installed, and pull a container to demonstrate you can run your own docker processes. 
