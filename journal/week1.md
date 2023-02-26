@@ -91,6 +91,12 @@ sudo apt-get -y install postgresql
 ![postgres setup](assets/week-1-postgres-3.jpg)
 
 
+#### Setup Snyk
+Snyk (pronounced sneak) is a developer security platform for securing code, dependencies, containers, and infrastructure as code.
+
+![Snyk account](https://user-images.githubusercontent.com/88502375/221404260-5ef76b8e-82cc-4d9b-8369-a46511f16801.png)
+
+
 ## Homework Challenges
 
 #### Run the dockerfile CMD as an external script
