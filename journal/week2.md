@@ -82,3 +82,31 @@ python app.py
 
 #### AWS X-Ray
 --------------
+
+##### Install aws-sdk
+Add to the requirements.txt
+```
+aws-xray-sdk
+```
+
+use pip to install python inpendencies
+```
+pip install -r requirements.txt
+```
+
+Add to app.py
+
+```
+from aws_xray_sdk.core import xray_recorder
+from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
+
+xray_url = os.getenv("AWS_XRAY_URL")
+xray_recorder.configure(service='Cruddur', dynamic_naming=xray_url)
+XRayMiddleware(app, xray_recorder)
+```
+![Xray](https://user-images.githubusercontent.com/88502375/221696030-5b48cebc-8eb4-4423-b89d-b23baa90b9a7.png)
+
+![xray backend](https://user-images.githubusercontent.com/88502375/221696202-6079fde6-d428-45cf-a85e-3aee23acc158.png)
+
+Note: I have not been able to see the Group 'backend-flask' on the AWS Cloud Watch.
+
