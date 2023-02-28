@@ -112,7 +112,7 @@ Note: I have not been able to see the Group 'backend-flask' on the AWS Cloud Wat
 
 
 #### CloudWatch Logs
-
+--------------------
 Amazon CloudWatch collects and visualizes real-time logs, metrics, and event data in automated dashboards to streamline your infrastructure and application maintenance.
 
 ![Product-Page-Diagram_Amazon-CloudWatch](https://user-images.githubusercontent.com/88502375/221828823-24d149c6-d9e8-411b-b1bf-bf444c2fa973.png)
@@ -144,6 +144,9 @@ LOGGER.addHandler(console_handler)
 LOGGER.addHandler(cw_handler)
 LOGGER.info("some message")
 ```
+![week-2-cloudwatch-1](https://user-images.githubusercontent.com/88502375/221993796-06bec413-01ea-4a73-adda-a72391f6a167.jpg)
 
+
+![week-2-cloudwatch-2](https://user-images.githubusercontent.com/88502375/221994868-f8358cff-a46f-422e-9d21-1f1670b1d895.jpg)
 
 References: https://aws.amazon.com/cloudwatch/
