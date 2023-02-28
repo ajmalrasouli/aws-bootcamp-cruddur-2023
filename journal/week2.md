@@ -33,7 +33,7 @@ Observability for Production Systems. Debug using Events, Traces, and Logs in on
 
 ##### Install Packages
 Install these packages to instrument a Flask app with OpenTelemetry:
-```
+```sh
 pip install opentelemetry-api
 pip install opentelemetry-sdk
 pip install opentelemetry-exporter-otlp-proto-http
@@ -42,7 +42,7 @@ pip install opentelemetry-instrumentation-requests
 ```
 
 ##### Initialize
-```
+```py
 # app.py updates
     
 from opentelemetry import trace
@@ -66,7 +66,7 @@ RequestsInstrumentor().instrument()
 ```
 
 ##### Configure and Run
-```
+```py
 export OTEL_EXPORTER_OTLP_ENDPOINT="https://api.honeycomb.io"
 export OTEL_EXPORTER_OTLP_HEADERS="x-honeycomb-team=tG937G8HLMb0tgQEnoCRTB"
 export OTEL_SERVICE_NAME="your-service-name"
@@ -85,18 +85,18 @@ python app.py
 
 ##### Install aws-sdk
 Add to the requirements.txt
-```
+```sh
 aws-xray-sdk
 ```
 
 use pip to install python inpendencies
-```
+```sh
 pip install -r requirements.txt
 ```
 
 Add to app.py
 
-```
+```py
 from aws_xray_sdk.core import xray_recorder
 from aws_xray_sdk.ext.flask.middleware import XRayMiddleware
 
@@ -110,3 +110,40 @@ XRayMiddleware(app, xray_recorder)
 
 Note: I have not been able to see the Group 'backend-flask' on the AWS Cloud Watch.
 
+
+#### CloudWatch Logs
+
+Amazon CloudWatch collects and visualizes real-time logs, metrics, and event data in automated dashboards to streamline your infrastructure and application maintenance.
+
+![Product-Page-Diagram_Amazon-CloudWatch](https://user-images.githubusercontent.com/88502375/221828823-24d149c6-d9e8-411b-b1bf-bf444c2fa973.png)
+
+Add to the requirements.txt
+
+```
+watchtower
+```
+```sh
+pip install -r requirements.txt
+```
+
+In app.py
+
+```
+import watchtower
+import logging
+from time import strftime
+```
+
+```py
+# Configuring Logger to Use CloudWatch
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+console_handler = logging.StreamHandler()
+cw_handler = watchtower.CloudWatchLogHandler(log_group='cruddur')
+LOGGER.addHandler(console_handler)
+LOGGER.addHandler(cw_handler)
+LOGGER.info("some message")
+```
+
+
+References: https://aws.amazon.com/cloudwatch/
