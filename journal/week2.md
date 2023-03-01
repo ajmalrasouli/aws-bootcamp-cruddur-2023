@@ -154,9 +154,12 @@ LOGGER.info("some message")
 --------------
 Instrument any application and capture all app crashes, errors and exceptions as they happen. Turn errors into signals you can use to focus on what’s wrong. Don’t get stuck digging through logs or creating queries and filters just to find the problem.
 
-Create a new project in Rollbar called Cruddur
+Created a new project in Rollbar called Cruddur
+
+![week-2-rollbar-1](https://user-images.githubusercontent.com/88502375/222267239-90b370f2-2694-4eae-b709-e28713a75da6.jpg)
 
 I have included to requirements.txt
+
 
 ```
 blinker
@@ -217,6 +220,14 @@ def rollbar_test():
     rollbar.report_message('Hello World!', 'warning')
     return "Hello World!"
 ```
+
+![week-2-rollbar-test-2](https://user-images.githubusercontent.com/88502375/222273547-c1191629-b2d1-4731-9d67-91ed74db57c8.jpg)
+
+
+![week-2-rollbar-dashboard-3](https://user-images.githubusercontent.com/88502375/222273981-2bbe64ad-f9ea-4c37-b163-50598fac1892.jpg)
+
+
+![week-2-rollbar-4](https://user-images.githubusercontent.com/88502375/222274360-5b68863e-6abb-4f46-b87c-6ad0a524cf49.jpg)
 
 
 References: https://aws.amazon.com/cloudwatch/
