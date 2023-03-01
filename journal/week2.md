@@ -149,4 +149,74 @@ LOGGER.info("some message")
 
 ![week-2-cloudwatch-2](https://user-images.githubusercontent.com/88502375/221994868-f8358cff-a46f-422e-9d21-1f1670b1d895.jpg)
 
+
+#### Rollbar
+--------------
+Instrument any application and capture all app crashes, errors and exceptions as they happen. Turn errors into signals you can use to focus on what’s wrong. Don’t get stuck digging through logs or creating queries and filters just to find the problem.
+
+Create a new project in Rollbar called Cruddur
+
+I have included to requirements.txt
+
+```
+blinker
+rollbar
+```
+
+Installed dependencies
+
+```sh
+pip install -r requirements.txt
+```
+
+Aslo , I need to set the access token for Rollbar through environment variable.
+
+```sh
+export ROLLBAR_ACCESS_TOKEN=""
+gp env ROLLBAR_ACCESS_TOKEN=""
+```
+
+Added to backend-flask for docker-compose.yml
+
+```yml
+ROLLBAR_ACCESS_TOKEN: "${ROLLBAR_ACCESS_TOKEN}"
+```
+
+Import for Rollbar
+
+```py
+import rollbar
+import rollbar.contrib.flask
+from flask import got_request_exception
+```
+
+```py
+rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+@app.before_first_request
+def init_rollbar():
+    """init rollbar module"""
+    rollbar.init(
+        # access token
+        rollbar_access_token,
+        # environment name
+        'production',
+        # server root directory, makes tracebacks prettier
+        root=os.path.dirname(os.path.realpath(__file__)),
+        # flask already sets up logging
+        allow_logging_basic_config=False)
+
+    # send exceptions from `app` to rollbar, using flask's signal system.
+    got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
+```
+
+For testing let's add an endpoint to app.py
+
+```py
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
+```
+
+
 References: https://aws.amazon.com/cloudwatch/
