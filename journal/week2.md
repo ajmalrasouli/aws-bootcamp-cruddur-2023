@@ -230,4 +230,19 @@ def rollbar_test():
 ![week-2-rollbar-4](https://user-images.githubusercontent.com/88502375/222274360-5b68863e-6abb-4f46-b87c-6ad0a524cf49.jpg)
 
 
+
+## Homework Challenges
+
+1. Run custom queries in Honeycomb and save them
+For example, consider a query on Visualize COUNT, P95(duration_ms), Group By endpoint. The results table from this query might look something like this:
+
+![week-2-honeycombquery-1](https://user-images.githubusercontent.com/88502375/222572590-7631a109-e97c-4645-a2d1-e11355b2f141.jpg)
+
+
+
+
+
+
+
+
 References: https://aws.amazon.com/cloudwatch/
