@@ -239,7 +239,10 @@ For example, consider a query on Visualize COUNT, P95(duration_ms), Group By end
 ![week-2-honeycombquery-1](https://user-images.githubusercontent.com/88502375/222572590-7631a109-e97c-4645-a2d1-e11355b2f141.jpg)
 
 
+2.Run custom queries in Honeycomb and save them
 
+
+![week-2-honeycombquery-2](https://user-images.githubusercontent.com/88502375/222575137-ac8eab49-4d38-4d68-8631-c1b2af8fac43.jpg)
 
 
 
