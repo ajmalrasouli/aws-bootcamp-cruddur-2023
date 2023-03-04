@@ -2,6 +2,7 @@ version: "3.8"
 services:
   backend-flask:
     environment:
+      
       FRONTEND_URL: "https://3000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       BACKEND_URL: "https://4567-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}"
       #FRONTEND_URL: "https://${CODESPACE_NAME}-3000.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
@@ -35,6 +36,10 @@ services:
       AWS_ACCESS_KEY_ID: "${AWS_ACCESS_KEY_ID}"
       AWS_SECRET_ACCESS_KEY: "${AWS_SECRET_ACCESS_KEY}"
       AWS_REGION: "${AWS_REGION}"
+      REACT_AWS_PROJECT_REGION:"${AWS_DEFAULT_REGION}"
+      REACT_APP_AWS_COGNITO_REGION:"${AWS_DEFAULT_REGION}"
+      REACT_APP_AWS_USER_POOLS_ID:"us-east-1_JiNLJjsta"
+      REACT_APP_CLIENT_ID:"4i7c0krem018l39nuenq8ngivd"
     command:
       - "xray -o -b xray-daemon:2000"
     ports:
