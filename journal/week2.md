@@ -230,6 +230,24 @@ def rollbar_test():
 ![week-2-rollbar-4](https://user-images.githubusercontent.com/88502375/222274360-5b68863e-6abb-4f46-b87c-6ad0a524cf49.jpg)
 
 
+## Github Codespaces CDE
+GitHub Codespaces is a cloud-based development environment that enables developers to code from anywhere.
+Every GitHub users have free access to 60 hours of GitHub Codespaces a month, and you can upgrade to a paid plan if you need more hours.
+I have setup the Cruddur app on Github Codespaces.
+
+
+
+![week-2-codespaces-1](https://user-images.githubusercontent.com/88502375/222907745-c4df3393-5740-4fdd-8ee0-d1e048f59afa.jpg)
+
+
+![week-2-codespaces-2](https://user-images.githubusercontent.com/88502375/222907755-7e9fa3b2-ecbc-45ca-a71e-3c41ba51668c.jpg)
+
+
+![week-2-codespaces-cruddur-app](https://user-images.githubusercontent.com/88502375/222907765-17f67c1d-7202-40ee-a3fe-69784b4efa96.jpg)
+
+
+![week-2-codespaces-cruddur-app-2](https://user-images.githubusercontent.com/88502375/222907770-e12a77dc-a3a3-457b-a1d1-125a994e3ac1.jpg)
+
 
 ## Homework Challenges
 
