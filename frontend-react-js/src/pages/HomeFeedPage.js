@@ -94,3 +94,4 @@ export default function HomeFeedPage() {
       <DesktopSidebar user={user} />
     </article>
   );
+}
