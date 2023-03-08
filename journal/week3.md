@@ -1,5 +1,7 @@
 # Week 3 — Decentralized Authentication
 
+## Required Homework/Tasks
+
 ## What is Decentralized Authentication?
 A form of authentication known as decentralized authentication verifies user identities without the aid of a central authority or server. Instead, it makes use of a distributed computer network, frequently based on blockchain technology, to peer-to-peer verify user identities.
 
@@ -22,11 +24,83 @@ To install AWS Amplify
 npm i aws-amplify --save
 ```
 
+To create a minimally configured user pool
+
+This example creates a user pool named cruddur-user-pool using default values. There are no required attributes and no application clients. MFA and advanced security is disabled.
+
+Command:
+
+```
+aws cognito-idp create-user-pool --pool-name cruddur-user-pool
+```
+
 Creat Cognito User Group
 ![week-3-userpool-1](https://user-images.githubusercontent.com/88502375/223562410-8d18c4e1-ad53-4206-b74a-49de0c339ca8.jpg)
 
 ![week-3-userpool-2](https://user-images.githubusercontent.com/88502375/223562813-f167dceb-d38d-4261-877e-1a1a45fb9031.jpg)
 
+
+#### How to add a user in user pool?
+1. Create a user
+2. Navigate to the Amazon Cognito console , and choose User Pools.
+3. Choose an existing user pool from the list, or create a user pool.
+4. Choose the Users tab, and choose Create a user.
+
+
+#### Create and Configure a Cognito User Pool from the AWS CLI
+
+##### First install aws cli using following command
+```
+sudo pip install awscli
+```
+
+##### Configure AWS credentials, Run below commonond, system will ask following input AWS Access Key ID, AWS Secret Access Key, Default region name, Default output format
+```
+sudo aws configure
+```
+
+##### Create user pool
+```
+sudo aws cognito-idp create-user-pool --pool-name cruddur-user-pool
+```
+
+#### Steps to Create Cognito User in AWS
+
+1. Create New User: First of all, add a new user in AWS Cognito with aws cognito-idp sign-up command line.
+
+```sh
+aws cognito-idp sign-up \
+    --client-id 71tm9vt159vgckt8kml11up8cn \
+    --username ajmalteq@gmail.com \
+    --password Pa55w0rd! \
+    --user-attributes Name="email",Value="ajmalteq@gmail.com" Name="name",Value="Ajmal" \
+    --region us-east-1 \
+    --profile default 
+```
+
+2. Confirm User as Admin: The confirm the newly added user with the below command.
+
+```sh
+aws cognito-idp admin-confirm-sign-up \
+    --user-pool-id us-east-1_f8oSH5YI0 \
+    --username ajmalteq@gmail.com \
+    --region  us-east-1 \
+    --profile geoff 
+```
+
+
+3. Verify Email Address: Finally, verify the email address of the newly added user with the below command.
+
+```sh
+aws cognito-idp admin-update-user-attributes \
+    --user-pool-id us-east-1_f8oSH5YI0 \
+    --username ajmalteq@gmail.com \
+    --user-attributes Name=email_verified,Value=true \
+    --region us-east-1 \
+    --profile geoff 
+```
+
+4. A new user has been created in User Pool with the “CONFIRMED” status. You can visit the AWS Cognito service and check for the user
 
 
 ## User Lifecycle Management
@@ -91,3 +165,5 @@ Amazon Cognito is a managed service that provides user authentication and author
 
 8. Keep your Amazon Cognito SDKs up to date: Always use the latest version of Amazon Cognito SDKs and keep them up to date to ensure that your application is using the latest security features and bug fixes.
 
+
+## Required Homework Challenges
