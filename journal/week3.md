@@ -39,6 +39,13 @@ Creat Cognito User Group
 
 ![week-3-userpool-2](https://user-images.githubusercontent.com/88502375/223562813-f167dceb-d38d-4261-877e-1a1a45fb9031.jpg)
 
+![week-3-code-1](https://user-images.githubusercontent.com/88502375/224171082-dbbaf0cc-058d-4135-a129-ebf3a802c02f.jpg)
+
+![week-3-confirmatio-1](https://user-images.githubusercontent.com/88502375/224171084-f96bfc60-1a5d-420b-b7a6-8778b01d2b5c.jpg)
+
+![week-3-signin-1](https://user-images.githubusercontent.com/88502375/224171086-2438f97c-9ec2-4a41-ad79-367b1d9c065e.jpg)
+
+
 
 #### How to add a user in user pool?
 1. Create a user
