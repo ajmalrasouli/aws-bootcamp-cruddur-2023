@@ -174,3 +174,7 @@ Amazon Cognito is a managed service that provides user authentication and author
 
 
 ## Required Homework Challenges
+1. Implemented MFA which sends SMS (text message)
+
+![week-3-mfa-1](https://user-images.githubusercontent.com/88502375/224497398-97c6b35c-a03a-4ea4-8be3-f21fd9739304.jpg)
+
