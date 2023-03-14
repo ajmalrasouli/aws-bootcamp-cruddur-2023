@@ -118,3 +118,32 @@ psql -U postgres -h localhost
 
 ### AWS Lambda
 AWS Lambda is an event-driven, serverless computing platform provided by Amazon as a part of Amazon Web Services. It is a computing service that runs code in response to events and automatically manages the computing resources required by that code. It was introduced on November 13, 2014. Wikipedia
+
+![week-4-security-rule-15](https://user-images.githubusercontent.com/88502375/225151489-a1df33dc-9f50-487a-b549-8ccad40cdc90.jpg)
+
+
+![week-4-psycopg2-lambda-layer-16](https://user-images.githubusercontent.com/88502375/225151539-ac055167-e299-47ce-a454-124c2422e1ee.jpg)
+
+
+![week-4-lambda-add-layer-17](https://user-images.githubusercontent.com/88502375/225151626-886ae260-8658-454c-8dbb-8766d0d61b69.jpg)
+
+
+![week-4-lambda-vpc-17](https://user-images.githubusercontent.com/88502375/225151597-2d29b20f-a5bb-4be0-bfec-7a3facfee92b.jpg)
+
+
+![week-4-lambda-vpc-19](https://user-images.githubusercontent.com/88502375/225151731-c04493e4-5586-44e3-8436-0dd8366e3658.jpg)
+
+
+![week-4-cloudwatch-error-db-20](https://user-images.githubusercontent.com/88502375/225151771-f534312b-6ae1-462b-9ba6-62e27854399c.jpg)
+
+
+![week-4-db-error-21](https://user-images.githubusercontent.com/88502375/225151821-27c5e732-3e3d-46de-9344-30aa58fd635c.jpg)
+
+
+![week-4-post-confirmation-lambda-22](https://user-images.githubusercontent.com/88502375/225151846-6c5f6a58-1702-4d71-ae7d-6c9375056c4a.jpg)
+
+
+![week-4-post-confirmation-lambda-23](https://user-images.githubusercontent.com/88502375/225151868-c3dba1a6-49e9-4531-8002-641dc2bfe7cb.jpg)
+
+
+
