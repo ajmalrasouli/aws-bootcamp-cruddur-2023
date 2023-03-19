@@ -64,6 +64,12 @@ aws dynamodb create-table \
  --provisioned-throughput \
  ReadCapacityUnits=10,WriteCapacityUnits=5
 ```
+![week-5-dynamodb-1](https://user-images.githubusercontent.com/88502375/226187565-55c8c7bd-f000-402a-bc0b-216d7b680269.jpg)
+
+![week-5-dynamodb-2](https://user-images.githubusercontent.com/88502375/226187568-4c47ea84-57e5-437e-9a79-0e42c5853fee.jpg)
+
+![week-5-dynamodb-3](https://user-images.githubusercontent.com/88502375/226187570-d75bc764-9647-4c3a-851a-63981fda1662.jpg)
+
 
 Write item to a table
 ```sh
