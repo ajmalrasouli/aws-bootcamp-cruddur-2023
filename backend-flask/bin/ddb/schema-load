@@ -1,20 +1,50 @@
-#! /usr/bin/bash
+#!/usr/bin/env python3
 
-set -e # stop if it fails at any point
+import boto3
+import sys
 
-if [ -z "$1" ]; then
-  echo "No TABLE_NAME argument supplied eg ./bin/ddb/drop cruddur-messages prod "
-  exit 1
-fi
-TABLE_NAME=$1
+attrs = {
+  'endpoint_url': 'http://localhost:8000'
+}
 
-if [ "$2" = "prod" ]; then
-  ENDPOINT_URL=""
-else
-  ENDPOINT_URL="--endpoint-url=http://localhost:8000"
-fi
+if len(sys.argv) == 2:
+  if "prod" in sys.argv[1]:
+    attrs = {}
 
-echo "deleting table: $TABLE_NAME"
+ddb = boto3.client('dynamodb',**attrs)
 
-aws dynamodb delete-table $ENDPOINT_URL \
-  --table-name $TABLE_NAME
+table_name = 'cruddur-messages'
+
+
+response = ddb.create_table(
+  TableName=table_name,
+  AttributeDefinitions=[
+    {
+      'AttributeName': 'pk',
+      'AttributeType': 'S'
+    },
+    {
+      'AttributeName': 'sk',
+      'AttributeType': 'S'
+    },
+  ],
+  KeySchema=[
+    {
+      'AttributeName': 'pk',
+      'KeyType': 'HASH'
+    },
+    {
+      'AttributeName': 'sk',
+      'KeyType': 'RANGE'
+    },
+  ],
+  #GlobalSecondaryIndexes=[
+  #],
+  BillingMode='PROVISIONED',
+  ProvisionedThroughput={
+      'ReadCapacityUnits': 5,
+      'WriteCapacityUnits': 5
+  }
+)
+
+print(response)
