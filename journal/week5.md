@@ -97,7 +97,29 @@ aws dynamodb list-tables
 ```
 
 
+#### List table in our cruddur app
+![week-5-dynamodb-4](https://user-images.githubusercontent.com/88502375/227544444-4a65dd72-d4a2-49ff-9c88-538e7cf6338a.jpg)
 
-References:
+#### Implementing Patterns
+![week-5-dynamodb-5](https://user-images.githubusercontent.com/88502375/227544512-9e3ad82d-f239-44cb-85bd-bf8897547723.jpg)
+
+#### Turning on streaming on the DynamoDB stream
+![week-5-dynamodb-6](https://user-images.githubusercontent.com/88502375/227544566-b05d2c95-0587-4c85-b9b7-402f39f0a68f.jpg)
+
+#### Create VPC endpoint for the Cruddur DynamoDB
+![week-5-vpc-endpoint-7](https://user-images.githubusercontent.com/88502375/227544646-0a1faa0c-f1a8-466a-b7b3-adbcdf41cd05.jpg)
+
+#### Create function called `cruddur-messaging-stream`
+![week-5-vpc-lambda-8](https://user-images.githubusercontent.com/88502375/227544721-768ce077-bd18-40d5-981e-1200d673c922.jpg)
+
+#### Setting permission policy
+![week-5-permissions-9](https://user-images.githubusercontent.com/88502375/227544789-14c0a425-dd8e-4eaf-bb33-afb64b6976be.jpg)
+
+#### Trigger for the cruddur-messaging-stream 
+![week-5-trigger-9](https://user-images.githubusercontent.com/88502375/227544792-e0dcd0aa-fa49-4da6-a455-c9cf6ff4046d.jpg)
+
+
+#### References:
 https://dynobase.dev/what-is-dynamodb/
+
 https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/
