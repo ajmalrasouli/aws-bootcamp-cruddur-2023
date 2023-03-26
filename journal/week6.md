@@ -14,7 +14,7 @@ Container images ideally are stored in repositories. Before deploying and hostin
 
 2. Once logged in, click Get Started to initialize creating a repository.
 
-3. Next, provide a unique repository name, but this tutorial uses a repository name called node-app.
+3. Next, provide a unique repository name, we will use cloud-security-bootcamp.
 
 ![Create repository 1](https://user-images.githubusercontent.com/88502375/227785351-ef4f3db7-4f8b-4d4d-bff1-e7f2da585ffa.png)
 ![Create repository 2](https://user-images.githubusercontent.com/88502375/227785389-de5e79a7-7a7d-4476-b94a-79f06509ae69.png)
@@ -48,3 +48,16 @@ If successful, you will see the following output with a message that says Login 
 5. Run the following commands to change your working directory (cd) to your project directory and build (docker build) a Docker image (node-app).
 6. Copy the third push command (docker tag) in the Push commands window, and run the command in your terminal to add the latest tag to your image. Doing so allows you to push the image to your repository.
 7. Finally, copy the fourth command (docker push), and run it on your terminal to push your Docker image to your repository on ECR.
+8. 
+![week-6-ECR-1](https://user-images.githubusercontent.com/88502375/227789019-ca3be32d-3ce6-4545-ab19-6cdf83d50600.jpg)
+
+![week-6-ECR-2](https://user-images.githubusercontent.com/88502375/227789032-9124c37d-43e7-4d33-bb86-8f6007a29a6e.jpg)
+
+![week-6-ECR-3](https://user-images.githubusercontent.com/88502375/227789078-4cb552f0-2efb-4c94-8a12-fa11586afc23.jpg)
+
+![week-6-ECR-4](https://user-images.githubusercontent.com/88502375/227789085-b93f35ae-5fc1-479b-9a84-8fa616197a41.jpg)
+
+![week-6-ECR-5](https://user-images.githubusercontent.com/88502375/227789092-420a77c1-5f5d-4bcc-bbab-2c15d3d7aa47.jpg)
+
+![week-6-ECR-6](https://user-images.githubusercontent.com/88502375/227789094-fc73f00c-a181-4ec5-9100-c4e8ce5b0d44.jpg)
+
