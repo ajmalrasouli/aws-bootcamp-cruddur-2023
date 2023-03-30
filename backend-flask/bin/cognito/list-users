@@ -26,3 +26,4 @@ for user in users:
   dict_users[handle['Value']] = sub['Value']
 
 print(json.dumps(dict_users, sort_keys=True, indent=2, default=str))
+
