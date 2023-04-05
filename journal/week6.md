@@ -61,3 +61,42 @@ If successful, you will see the following output with a message that says Login 
 
 ![week-6-ECR-6](https://user-images.githubusercontent.com/88502375/227789094-fc73f00c-a181-4ec5-9100-c4e8ce5b0d44.jpg)
 
+![week-6-CloudWatch-Log-7](https://user-images.githubusercontent.com/88502375/230061763-af6dc2d1-f82d-40bd-8ac8-82b9a4ba578d.jpg)
+
+
+![week-6-ecs-cruddur-8](https://user-images.githubusercontent.com/88502375/230061829-dc18d330-9267-46ac-855d-28ba1419c828.jpg)
+
+#### Checking if Flask server is running
+![week-6-Flask-server-is-running](https://user-images.githubusercontent.com/88502375/230061948-2086b01c-50ae-4eda-9fe7-f1cb08a34b0b.jpg)
+
+#### Creating cruddur-python repository on aws ecr. 
+![week-6-ECR-10](https://user-images.githubusercontent.com/88502375/230062123-ada61b61-ad32-42d9-a5d1-5ddf8a629d31.jpg)
+
+
+#### Pulling pyhon image called 3.10-slim-buster.
+![week-6-pull-docker-11](https://user-images.githubusercontent.com/88502375/230062141-e6ab62c0-87e6-4f98-8498-013dc4a95cf1.jpg)
+
+
+![week-6-flask-health-check-12](https://user-images.githubusercontent.com/88502375/230062155-fdc73fa0-16d9-490a-a95a-09ba11db7d31.jpg)
+
+#### Confirmaing our image health check.
+![week-6-aws-parameter settings-12](https://user-images.githubusercontent.com/88502375/230062177-0337ac8e-2c03-45b6-a8fe-8ce81c03f723.jpg)
+
+
+#### Storing cruddur app secrets on AWS Systems Manager / My parameters
+![week-6-aws-parameter settings-13](https://user-images.githubusercontent.com/88502375/230062199-bd979cd5-3c75-40ed-b5df-e82160ce67f8.jpg)
+
+#### Updating and creating Roles and Policy.
+![week-6--iam-permissions-14](https://user-images.githubusercontent.com/88502375/230062230-bbb92baa-692b-465e-8b1e-87d58e24a813.jpg)
+
+#### Creating Task definitions for backend-flask
+![week-6--task-definition-15](https://user-images.githubusercontent.com/88502375/230062253-8fc6d93f-5716-46cb-9f65-a16d5accbfd2.jpg)
+
+#### Issues with backend-flask deployemnt.
+![week-6--error-backend-flask-deployemt-16](https://user-images.githubusercontent.com/88502375/230062274-be457aab-ea29-444e-9170-f6b3e3c6caad.jpg)
+
+
+![week-6--error-backend-flask-deployemt-17](https://user-images.githubusercontent.com/88502375/230062289-8377d4bb-50c6-420e-86ec-da50bbfbd9b1.jpg)
+
+
+![week-6-health-check-inside-backend-flask-container-18](https://user-images.githubusercontent.com/88502375/230062346-b2323c8d-e39a-4319-84f9-7cd0bd6e0241.jpg)
