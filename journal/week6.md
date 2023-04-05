@@ -76,10 +76,10 @@ If successful, you will see the following output with a message that says Login 
 #### Pulling pyhon image called 3.10-slim-buster.
 ![week-6-pull-docker-11](https://user-images.githubusercontent.com/88502375/230062141-e6ab62c0-87e6-4f98-8498-013dc4a95cf1.jpg)
 
-
+#### Confirmaing our image health check.
 ![week-6-flask-health-check-12](https://user-images.githubusercontent.com/88502375/230062155-fdc73fa0-16d9-490a-a95a-09ba11db7d31.jpg)
 
-#### Confirmaing our image health check.
+#### AWS Parameter settings.
 ![week-6-aws-parameter settings-12](https://user-images.githubusercontent.com/88502375/230062177-0337ac8e-2c03-45b6-a8fe-8ce81c03f723.jpg)
 
 
@@ -95,8 +95,8 @@ If successful, you will see the following output with a message that says Login 
 #### Issues with backend-flask deployemnt.
 ![week-6--error-backend-flask-deployemt-16](https://user-images.githubusercontent.com/88502375/230062274-be457aab-ea29-444e-9170-f6b3e3c6caad.jpg)
 
-
+#### Error while backend-flask deployment
 ![week-6--error-backend-flask-deployemt-17](https://user-images.githubusercontent.com/88502375/230062289-8377d4bb-50c6-420e-86ec-da50bbfbd9b1.jpg)
 
-
+#### Health check inside backend-flask container.
 ![week-6-health-check-inside-backend-flask-container-18](https://user-images.githubusercontent.com/88502375/230062346-b2323c8d-e39a-4319-84f9-7cd0bd6e0241.jpg)
