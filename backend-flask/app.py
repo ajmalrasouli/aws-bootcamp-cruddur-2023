@@ -121,15 +121,10 @@ def init_rollbar():
     got_request_exception.connect(rollbar.contrib.flask.report_exception, app)
 
 
-# @app.route('/rollbar/test')
-# def rollbar_test():
-#     rollbar.report_message('Hello World!', 'warning')
-#     return "Hello World!"
-
-
-@app.route('/api/health-check')
-def health_check():
-    return {'success': True}, 200
+@app.route('/rollbar/test')
+def rollbar_test():
+    rollbar.report_message('Hello World!', 'warning')
+    return "Hello World!"
 
 
 @app.route("/api/message_groups", methods=['GET'])
@@ -264,7 +259,7 @@ def data_search():
 @app.route("/api/activities", methods=['POST', 'OPTIONS'])
 @cross_origin()
 def data_activities():
-    user_handle = request.json["user_handle"]
+    user_handle = 'ajmalrasouli'
     message = request.json['message']
     ttl = request.json['ttl']
     model = CreateActivity.run(message, user_handle, ttl)
