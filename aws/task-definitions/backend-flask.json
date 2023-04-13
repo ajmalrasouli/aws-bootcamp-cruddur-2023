@@ -1,7 +1,7 @@
 {
   "family": "backend-flask",
   "executionRoleArn": "arn:aws:iam::804789588521:role/CruddurServiceExecutionRole",
-    "taskRoleArn": "arn:aws:iam::804789588521:role/CruddurTaskRole",
+  "taskRoleArn": "arn:aws:iam::804789588521:role/CruddurTaskRole",
   "networkMode": "awsvpc",
   "cpu": "256",
   "memory": "512",
@@ -10,26 +10,13 @@
   ],
   "containerDefinitions": [
     {
-      "name": "xray",
-      "image": "public.ecr.aws/xray/aws-xray-daemon" ,
-      "essential": true,
-      "user": "1337",
-      "portMappings": [
-        {
-          "name": "xray",
-          "containerPort": 2000,
-          "protocol": "udp"
-        }
-      ]
-    },
-    {
       "name": "backend-flask",
       "image": "804789588521.dkr.ecr.us-east-1.amazonaws.com/backend-flask",
       "essential": true,
       "healthCheck": {
         "command": [
           "CMD-SHELL",
-          "python /backend-flask/bin/health-check"
+          "python /backend-flask/bin/flask/health-check"
         ],
         "interval": 30,
         "timeout": 5,
@@ -57,10 +44,8 @@
         {"name": "OTEL_EXPORTER_OTLP_ENDPOINT", "value": "https://api.honeycomb.io"},
         {"name": "AWS_COGNITO_USER_POOL_ID", "value": "us-east-1_f8oSH5YI0"},
         {"name": "AWS_COGNITO_USER_POOL_CLIENT_ID", "value": "71tm9vt159vgckt8kml11up8cn"},
-        {"name": "FRONTEND_URL", "value": "https://cloudproject.uk"},
-        {"name": "BACKEND_URL", "value": "https://cloudproject.uk"},
-        {"name": "BACKEND_URL_GITPOD", "value": "https://4567-ajmalrasoul-awsbootcamp-9vgbuvakjjv.ws-eu93.gitpod.io"},
-        {"name": "FRONTEND_URL_GITPOD", "value": "https://3000-ajmalrasoul-awsbootcamp-9vgbuvakjjv.ws-eu93.gitpod.io"},
+        {"name": "FRONTEND_URL", "value": "*"},
+        {"name": "BACKEND_URL", "value": "*"},
         {"name": "AWS_DEFAULT_REGION", "value": "us-east-1"}
       ],
       "secrets": [
