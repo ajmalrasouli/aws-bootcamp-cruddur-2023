@@ -3,3 +3,12 @@ frontend-react-js/build/*
 *.env
 node_modules
 session-manager-plugin.*
+
+# exclude AWS CLI
+aws/dist/*
+aws/install
+aws/README.md
+aws/THIRD_PARTY_LICENSES
+
+# exclude docker images / build
+docker/*
