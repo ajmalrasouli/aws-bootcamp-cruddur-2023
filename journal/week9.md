@@ -69,4 +69,68 @@ creating cruddur-backend-fargate Pipeline.
 Pipeline created successfully.
 ![week-9-Pipelines-4](https://user-images.githubusercontent.com/88502375/233171073-4bfe3aca-7eee-48db-9b58-0317fe2dd52d.jpg)
 
+#### buildspec.yml to build new images from our GitHub repository
 
+```sh
+# Buildspec runs in the build stage of your pipeline.
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+    commands:
+      - echo "cd into $CODEBUILD_SRC_DIR/backend"
+      - cd $CODEBUILD_SRC_DIR/backend-flask
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $IMAGE_URL
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...          
+      - docker build -t backend-flask .
+      - "docker tag $REPO_NAME $IMAGE_URL/$REPO_NAME"
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image..
+      - docker push $IMAGE_URL/$REPO_NAME
+      - cd $CODEBUILD_SRC_DIR
+      - echo "imagedefinitions.json > [{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"$IMAGE_URL/$REPO_NAME\"}]" > imagedefinitions.json
+      - printf "[{\"name\":\"$CONTAINER_NAME\",\"imageUri\":\"$IMAGE_URL/$REPO_NAME\"}]" > imagedefinitions.json
+
+env:
+  variables:
+    AWS_ACCOUNT_ID: 804789588521
+    AWS_DEFAULT_REGION: us-east-1
+    CONTAINER_NAME: backend-flask
+    IMAGE_URL: 804789588521.dkr.ecr.us-east-1.amazonaws.com
+    REPO_NAME: backend-flask:latest
+artifacts:
+  files:
+    - imagedefinitions.json
+
+```
+
+To get everything working properly, I had to add a few permissions to the backend-flask CodeBuild service role.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:CompleteLayerUpload",
+        "ecr:GetAuthorizationToken",
+        "ecr:InitiateLayerUpload",
+        "ecr:PutImage",
+        "ecr:UploadLayerPart",
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
