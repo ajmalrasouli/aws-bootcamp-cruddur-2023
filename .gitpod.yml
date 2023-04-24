@@ -39,6 +39,9 @@ tasks:
     before: |
       brew tap momentohq/tap
       brew install momento-cli
+  - name: cdk
+    before: |
+      npm install aws-cdk -g
 vscode:
   extensions:
     - 42Crunch.vscode-openapi
