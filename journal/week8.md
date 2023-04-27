@@ -59,6 +59,19 @@ export class CdkPlayStack extends cdk.Stack {
 
 AWS provides a CLI tool, which is the primary way to interact with your AWS CDK application. It builds, synthesizes, and deploys the resources defined in your CDK application.
 
+### The standard AWS CDK development workflow
+
+- The AWS CDK template can be used to create the app.
+
+- Create resources within stacks by adding code to the application.
+
+- Build the app. (If you forget, the AWS CDK Toolkit performs this action for you.)
+
+- Synthesize one or more stacks in the app to create an AWS CloudFormation template.
+
+- Deploy one or more stacks to your AWS account.
+
+
 ### Create The App
 The cdk init command can be used to initialize a new application in the language of your choice. Each CDK app maintains its own set of module dependencies and should be created in its own directory. For example, we can create a TypeScript CDK application with the cruddur-app template by using the following command:
 
