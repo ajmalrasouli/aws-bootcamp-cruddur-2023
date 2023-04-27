@@ -66,7 +66,77 @@ The cdk init command can be used to initialize a new application in the language
 cdk init cruddur-app --language=typescript
 ```
 
-The $\color{color-blue}{cdk init}$ command also initializes the project as a Git repository, along with the $\color{color-blue}{.gitignore}$ file. Apart from that, it generates a $\color{color-blue}{package.json}$ file for managing project dependencies and a $\color{color-blue}{tsconfig.json}$ file for TypeScript configuration.
+The $\color{color-blue}{cdk-init}$ command also initializes the project as a Git repository, along with the $\color{color-blue}{.gitignore}$ file. Apart from that, it generates a $\color{color-blue}{package.json}$ file for managing project dependencies and a $\color{color-blue}{tsconfig.json}$ file for TypeScript configuration.
 
-Once you have initialized the project, you can run the build command to manually compile the app. This step isn’t mandatory, because the cdk toolkit does it for you before you deploy the changes, but a manual build can sometimes help in catching syntax errors. Here’s how it can be done:
+Once you have initialized the project, you can run the $\color{color-blue}{build}$ command to manually compile the app. This step isn’t mandatory, because the $\color{color-blue}{cdk}$ toolkit does it for you before you deploy the changes, but a manual build can sometimes help in catching syntax errors. Here’s how it can be done:
+
+```py
+npm run build
+```
+
+We can verify that the project was initialized with a single stack by executing the following command:
+
+```py
+cdk ls
+```
+The ls command should return the name of our app’s directory as the name of the stack.
+
+
+### Synthesize an aws cloudformation template
+
+Once the project has been set up, you may use the build command to manually compile the application. The cdk toolkit performs this step for you before to deploying the modifications, so it is not required, although a manual build might occasionally be useful in identifying syntax mistakes. Here is how to accomplish it:
+
+```py
+cdk synth
+```
+
+This produces a cdk.out file with a YAML-formatted template and converts the resources defined in the stack to the corresponding AWS CloudFormation template. Below is a representation of where the YAML output starts:
+
+```yml
+Resources:
+  MyFirstBucketB8884501:
+    Type: AWS::S3::Bucket
+    Properties:
+      VersioningConfiguration:
+        Status: Enabled
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Metadata:...
+```
+
+### Deploy the Stack
+
+Make sure the AWS CLI is installed and your AWS credentials are set up on your device before attempting to deploy the stack. 
+
+```py
+cdk deploy
+```
+
+### Screenshots of implementation
+
+![week-8-Install-CDK-globally-1](https://user-images.githubusercontent.com/88502375/234807326-f0742c7c-172c-480e-983d-d64307b97138.jpg)
+
+
+![week-8-CDK-synth-2](https://user-images.githubusercontent.com/88502375/234807362-c1a3c104-5a08-4a6f-b890-4bf79124601a.jpg)
+
+
+
+![week-8-CDK-synth-3](https://user-images.githubusercontent.com/88502375/234807385-8681c2d4-ff84-4ede-98a0-8dca4df1cbc2.jpg)
+
+
+![week-8-CDK-CloudFormation-4](https://user-images.githubusercontent.com/88502375/234807401-7704c8cb-2b02-4342-b8a3-b3291bfec207.jpg)
+
+
+![week-8-CDKToolKit-5](https://user-images.githubusercontent.com/88502375/234807419-58085044-32fd-411a-864c-9cb3700d1281.jpg)
+
+
+![week-8-CDK-Deploy-6](https://user-images.githubusercontent.com/88502375/234807438-3c1e1b68-4114-4608-9193-e183a20e173c.jpg)
+
+
+![week-8-cdk-bootstrap-7](https://user-images.githubusercontent.com/88502375/234807460-e05e3a1a-f779-4fcc-91de-c813366da409.jpg)
+
+
+
+
+
 
