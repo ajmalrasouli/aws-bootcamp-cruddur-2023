@@ -199,4 +199,18 @@ cdk deploy
       }
 ```
 
+![week-8-cruddurAvatarUpload_Lamba-8](https://user-images.githubusercontent.com/88502375/235314228-9e76f715-4441-4a70-a1a2-9341baa99b07.jpg)
+
+
+![week-8-cruddurAvatarUpload_Lamba-test-9](https://user-images.githubusercontent.com/88502375/235314234-37146e57-5461-4fe3-beb8-8b3dc37fa1b2.jpg)
+
+
+![week-8-cruddurAvatarUpload-10](https://user-images.githubusercontent.com/88502375/235314240-9c5240b6-ed6c-4453-91c3-7a366df51bd7.jpg)
+
+
+![week-8-API-Gateway-11](https://user-images.githubusercontent.com/88502375/235314246-e6161a31-7f24-4083-9941-cb957d7eba56.jpg)
+
+
+![week-8-CruddurApiGatewayLambdaAuthorizer-12](https://user-images.githubusercontent.com/88502375/235314254-20de1618-9871-4640-bf35-95dea1e387a3.jpg)
+
 
