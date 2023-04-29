@@ -149,7 +149,54 @@ cdk deploy
 ![week-8-cdk-bootstrap-7](https://user-images.githubusercontent.com/88502375/234807460-e05e3a1a-f779-4fcc-91de-c813366da409.jpg)
 
 
+![week-8-CDK-deploy - 1](https://user-images.githubusercontent.com/88502375/235297148-0486b183-e293-45f8-bc7f-a776b0f0f98b.jpg)
 
 
+
+![week-8-CDK-deploy - 2](https://user-images.githubusercontent.com/88502375/235297153-f9b60926-a081-40e7-aa77-16aa5b4191c5.jpg)
+
+
+![week-8-CDK-S3-bucket-3](https://user-images.githubusercontent.com/88502375/235297157-26d29e7e-6909-43e8-b28c-42e12805b79a.jpg)
+
+
+![week-8-CDK-S3-bucket-4](https://user-images.githubusercontent.com/88502375/235297159-a478083f-ce5e-4123-a42e-009ebe8ef71b.jpg)
+
+
+
+![week-8-CloudFront-5](https://user-images.githubusercontent.com/88502375/235297161-291537a7-3596-4918-9f42-c61d6e967f62.jpg)
+
+
+![week-8-s3-bucket-policy-6](https://user-images.githubusercontent.com/88502375/235297165-c79f677b-4c1a-4c69-b7a0-a8ee0b56f11f.jpg)
+
+
+![week-8-s3-bucket-7](https://user-images.githubusercontent.com/88502375/235297171-f72e0223-c1f2-4155-9332-52d1025451ff.jpg)
+
+
+***We must allow access to CloudFront using this policy statement.***
+
+```yml
+
+
+{
+        "Version": "2008-10-17",
+        "Id": "PolicyForCloudFrontPrivateContent",
+        "Statement": [
+            {
+                "Sid": "AllowCloudFrontServicePrincipal",
+                "Effect": "Allow",
+                "Principal": {
+                    "Service": "cloudfront.amazonaws.com"
+                },
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::assets.cloudproject.uk/*",
+                "Condition": {
+                    "StringEquals": {
+                      "AWS:SourceArn": "arn:aws:cloudfront::804789588521:distribution/EQDLN0KTHJK88"
+                    }
+                }
+            }
+        ]
+      }
+```
 
 
