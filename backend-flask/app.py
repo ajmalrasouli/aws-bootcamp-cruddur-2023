@@ -102,7 +102,7 @@ cors = CORS(
 #     return response
 
 # rollbar
-rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
+#rollbar_access_token = os.getenv('ROLLBAR_ACCESS_TOKEN')
 
 
 # @app.before_first_request
