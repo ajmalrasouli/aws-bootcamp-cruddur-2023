@@ -8,6 +8,8 @@ import ActivityFeed from '../components/ActivityFeed';
 import ActivityForm from '../components/ActivityForm';
 import ProfileHeading from '../components/ProfileHeading';
 import ProfileForm from '../components/ProfileForm';
+
+
 import {checkAuth, getAccessToken} from '../lib/CheckAuth';
 
 export default function UserFeedPage() {
@@ -33,7 +35,7 @@ export default function UserFeedPage() {
       });
       let resJson = await res.json();
       if (res.status === 200) {
-        // setActivities(resJson)
+        console.log('setprofile',resJson.profile)
         setProfile(resJson.profile)
         setActivities(resJson.activities)
       } else {
