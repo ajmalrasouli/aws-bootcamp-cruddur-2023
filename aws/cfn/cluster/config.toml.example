@@ -1,0 +1,7 @@
+lines (4 sloc)  48 Bytes
+ 
+
+[deploy]
+bucket = ''
+region = ''
+stack_name = ''
