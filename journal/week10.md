@@ -370,13 +370,13 @@ aws cloudformation describe-change-set --change-set-name arn:aws:cloudformation:
 
 ### AWS CloudFormation Best Practices for Infrastructure as Code
 
-1. ***Modularity*** - Break down stacks into smaller, reusable templates for flexibility and ease of managment.
-2. ***Parameters*** - Use parameters to allow for customisation of stacks and avoid hardcoding values.
-3. ***Conditional Logic*** - Utilise conditionals to control resource creation and updates based on specific circumstances.
-4. ***Resource Naming*** - Follow a consistent naming convetion fo resources to aid in tracking and manangement.
-5. ***Validation*** - Validate templates before deployment to catch errors and potential issues early on.
-6. ***Testing*** - Test changes in a staging environment to ensure proper functionality and avoid issues in production.
-7. ***Documentation*** - Document stacks thoroughly to aid in troubleshooting and understanding of the infrastructure.
+1. ${\color{green}Modularity}$ - Break down stacks into smaller, reusable templates for flexibility and ease of managment.
+2. ${\color{green}Parameters}$ - Use parameters to allow for customisation of stacks and avoid hardcoding values.
+3. ${\color{green}Conditional Logic}$ - Utilise conditionals to control resource creation and updates based on specific circumstances.
+4. ${\color{green}Resource Naming}$ - Follow a consistent naming convetion fo resources to aid in tracking and manangement.
+5. ${\color{green}Validation}$ - Validate templates before deployment to catch errors and potential issues early on.
+6. ${\color{green}Testing}$ - Test changes in a staging environment to ensure proper functionality and avoid issues in production.
+7. ${\color{green}Documentation}$ - Document stacks thoroughly to aid in troubleshooting and understanding of the infrastructure.
 
 
 
@@ -388,60 +388,61 @@ CloudFormation is an infrastructure automation platform for AWS that deploys AWS
 
 ### Benefits of CloudFormation
 
-- Deployment speed
-- Scaling up
-- Service integration
-- Consistency
-- Security
-- Easy updates
-- Auditing and change management
+🔷 Deployment speed
+🔷 Scaling up
+🔷 Service integration
+🔷 Consistency
+🔷 Security
+🔷 Easy updates
+🔷 Auditing and change management
 
 
-#### Alternatives to CloudFormation
+### Alternatives to CloudFormation
 
-- HashiCorp Terraform
-- Ansible
+🟧 HashiCorp Terraform
 
-
-#### CloudFormation Template Terms and Concepts
+🟧 Ansible
 
 
-***Template***
+
+### CloudFormation Template Terms and Concepts
+
+
+🟩 Template
 
 A CloudFormation template is simply a text file, formatted in a specific way (see below for details on formatting), that defines how AWS services or resources should be configured and deployed.
 
 
-***Stacks***
+🟩 Stacks
 
 A stack is a term AWS uses to refer to a collection of multiple AWS resources -- such as EC2 virtual machines, S3 storage, and IAM access controls -- that you can manage together using a single template.
 
 
-***Formatting***
+🟩 Formatting
 
 CloudFormation supports templates that are formatted using either JSON or YAML. These are widely used file formats for structuring text files. Most other IaC tools use the same formatting languages, as do platforms like Kubernetes.
 
 
-***Parameters***
+🟩 Parameters
 
 If you need to apply unique settings for each deployment, you can do so using parameters. Parameters let you define custom values for each deployment that CloudFormation will apply at runtime.
 
-***Conditions***
+🟩 Conditions
 
 You can also fine-tune deployments by setting conditions, which let you define conditional rules to govern precisely how each deployment proceeds.
 
 
-***Change sets***
+🟩 Change sets
 
 If you want to update a deployment using CloudFormation, you can update the template you used to create the deployment. You can then create a change set, which summarizes the changes that the updated template will apply before making the change.
 
 
-***Functions***
+🟩 Functions
 
 There are several ways to get data into a CloudFormation template, with parameters being the primary. But those parameters may not be known at deployment time. CloudFormation Functions allow CloudFormation Designers to retrieve data from resources deployed in the current CloudFormation or from external sources in the AWS account. Ref is used extensively to reference other resources inside the template like the example below. It creates an EIP for the instance created earlier in the template.
+
 
 
 Manually setting up and deploying AWS resources is an unproductive use of your team's time. It also increases the risk of configuration oversights and inconsistencies that can lead to management problems and security risks. Furthermore, it makes it harder to update or scale resources quickly.
 
 By leveraging an IaC tool such as CloudFormation, your team can streamline the AWS deployment process. You can define your resource configurations once, then deploy them as many times as you need. You can also quickly and predictably update resources via change sets, and you can use your CloudFormation templates to keep track of how you configure your resources and how they have changed over time.
-
-
