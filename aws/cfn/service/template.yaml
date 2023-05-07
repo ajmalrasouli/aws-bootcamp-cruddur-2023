@@ -66,7 +66,7 @@ Parameters:
     Default: 'arn:aws:ssm:us-east-1:804789588521:parameter/cruddur/backend-flask/ROLLBAR_ACCESS_TOKEN'
   SecretsOtelExporterOltpHeaders:
     Type: String
-    Default: 'arn:aws:ssm:ca-central-1:804789588521:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS'
+    Default: 'arn:aws:ssm:us-east-1:804789588521:parameter/cruddur/backend-flask/OTEL_EXPORTER_OTLP_HEADERS'
   
 Resources:
   FargateService:
