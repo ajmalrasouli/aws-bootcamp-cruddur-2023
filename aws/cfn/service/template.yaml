@@ -87,7 +87,7 @@ Resources:
         - TargetGroupArn:
             Fn::ImportValue:
               !Sub "${ClusterStack}BackendTGArn"
-          ContainerName: 'backend-flask'
+          ContainerName: !Ref ContainerName
           ContainerPort: !Ref ContainerPort
       NetworkConfiguration:
         AwsvpcConfiguration:
