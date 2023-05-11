@@ -4,22 +4,6 @@ import re
 import sys
 from flask import current_app as app
 
-def query_wrap_object(template):
-  sql = f"""
-  (SELECT COALESCE(row_to_json(object_row),'{{}}'::json) FROM (
-  {template}
-  ) object_row);
-  """
-  return sql
-
-def query_wrap_array(template):
-  sql = f"""
-  (SELECT COALESCE(array_to_json(array_agg(row_to_json(array_row))),'[]'::json) FROM (
-  {template}
-  ) array_row);
-  """
-  return sql
-
 class Db:
   def __init__(self):
     self.init_pool()
@@ -42,7 +26,6 @@ class Db:
   def init_pool(self):
     connection_url = os.getenv("CONNECTION_URL")
     self.pool = ConnectionPool(connection_url)
-
   # we want to commit data such as an insert
   # be sure to check for RETURNING in all uppercases
   def print_params(self,params):
@@ -57,40 +40,43 @@ class Db:
     no_color = '\033[0m'
     print(f'{cyan} SQL STATEMENT-[{title}]------{no_color}')
     print(sql,params)
+  def query_commit(self,sql,params={},verbose=True):
+    if verbose:
+      self.print_sql('commit with returning',sql,params)
 
-  def query_commit(self,sql,params={}):
-    self.print_sql('commit with returning',sql,params)
-  
     pattern = r"\bRETURNING\b"
     is_returning_id = re.search(pattern, sql)
 
     try:
       with self.pool.connection() as conn:
-        with conn.cursor() as cur:
-          cur.execute(sql,params)
-          if is_returning_id:
-            returning_id = cur.fetchone()[0]
-          conn.commit() 
-          if is_returning_id:
-            return returning_id
+        cur =  conn.cursor()
+        cur.execute(sql,params)
+        if is_returning_id:
+          returning_id = cur.fetchone()[0]
+        conn.commit() 
+        if is_returning_id:
+          return returning_id
     except Exception as err:
       self.print_sql_err(err)
-
   # when we want to return a json object
-  def query_array_json(self,sql,params={}):
-    self.print_sql('array',sql,params)
+  def query_array_json(self,sql,params={},verbose=True):
+    if verbose:
+      self.print_sql('array',sql,params)
+
     wrapped_sql = self.query_wrap_array(sql)
     with self.pool.connection() as conn:
       with conn.cursor() as cur:
         cur.execute(wrapped_sql,params)
         json = cur.fetchone()
         return json[0]
-
   # When we want to return an array of json objects
-  def query_object_json(self,sql,params={}):
-    self.print_sql('json',sql,params)
-    self.print_params(params)
+  def query_object_json(self,sql,params={},verbose=True):
+    if verbose:
+      self.print_sql('json',sql,params)
+      self.print_params(params)
+
     wrapped_sql = self.query_wrap_object(sql)
+
     with self.pool.connection() as conn:
       with conn.cursor() as cur:
         cur.execute(wrapped_sql,params)
@@ -99,14 +85,15 @@ class Db:
           return "{}"
         else:
           return json[0]
-  def query_value(self,sql,params={}):
-    self.print_sql('value',sql,params)
+  def query_value(self,sql,params={},verbose=True):
+    if verbose:
+      self.print_sql('value',sql,params)
+
     with self.pool.connection() as conn:
       with conn.cursor() as cur:
         cur.execute(sql,params)
         json = cur.fetchone()
         return json[0]
-
   def query_wrap_object(self,template):
     sql = f"""
     (SELECT COALESCE(row_to_json(object_row),'{{}}'::json) FROM (
@@ -114,7 +101,6 @@ class Db:
     ) object_row);
     """
     return sql
-
   def query_wrap_array(self,template):
     sql = f"""
     (SELECT COALESCE(array_to_json(array_agg(row_to_json(array_row))),'[]'::json) FROM (
@@ -122,7 +108,6 @@ class Db:
     ) array_row);
     """
     return sql
-    
   def print_sql_err(self,err):
     # get details about the exception
     err_type, err_obj, traceback = sys.exc_info()

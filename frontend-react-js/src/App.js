@@ -1,4 +1,5 @@
 import './App.css';
+import './components/Popup.css';
 
 import HomeFeedPage from './pages/HomeFeedPage';
 import NotificationsFeedPage from './pages/NotificationsFeedPage';
@@ -15,8 +16,8 @@ import {
   createBrowserRouter,
   RouterProvider
 } from "react-router-dom";
-
 import { Amplify } from 'aws-amplify';
+
 
 Amplify.configure({
   "AWS_PROJECT_REGION": process.env.REACT_APP_AWS_PROJECT_REGION,

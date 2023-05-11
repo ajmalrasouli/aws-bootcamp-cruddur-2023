@@ -45,3 +45,21 @@ A listener checks for connection requests on its port and protocol. Traffic rece
 #### cruddur-backend-flask-tg target group status
 ![week-7-ec2-target-groups-cruddur-backend-flask-tg-10](https://user-images.githubusercontent.com/88502375/230879679-abcaf77c-574a-4f7c-ae12-79e97ef95802.jpg)
 
+#### #### backend-flask health check
+![week-7-backend-flask-health-check-11](https://user-images.githubusercontent.com/88502375/233161474-79239e25-6c5b-47c9-a692-818d2d0b0ab0.jpg)
+
+#### backend-flask and frontend-reat-js both showing in healthy status.
+![week-7-both-images-healthy-12](https://user-images.githubusercontent.com/88502375/233161501-02cccd4f-edb5-42d3-bdfd-9ce91c827c89.jpg)
+
+#### Implementation of busybox
+![week-7-busybox-21](https://user-images.githubusercontent.com/88502375/233161651-4b8653b5-5556-41fe-be9d-10054f0188ce.jpg)
+
+
+#### Container Insights
+![week-7-container-insights-22](https://user-images.githubusercontent.com/88502375/233161672-578f34d1-d923-42ec-8ad2-b1180321a13c.jpg)
+
+
+#### Container Insights shows cruddur services
+![week-7-container-insights-23](https://user-images.githubusercontent.com/88502375/233161686-e6e4f8b1-e56b-4342-9ab5-18a525d46e1c.jpg)
+
+

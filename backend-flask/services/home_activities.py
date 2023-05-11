@@ -16,7 +16,6 @@ class HomeActivities:
     results = db.query_array_json(sql)
     return results
 
-
 """
 # mock endpoint
 class HomeActivities:
