@@ -250,5 +250,6 @@ Resources:
                   - ssmmessages:OpenDataChannel
                 Resource: '*'
       ManagedPolicyArns:
+      
         - arn:aws:iam::aws:policy/CloudWatchLogsFullAccess
         - arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess
