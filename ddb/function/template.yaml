@@ -52,21 +52,13 @@ Resources:
   ProcessDynamoDBStream:
     Type: AWS::Serverless::Function
     Properties:
-      Architectures: arm64
-      CodeUri: ../../cfn/ddb/???
-      InlineCode: ???
-      PackageType: ZIP
+      CodeUri: .
+      PackageType: Zip
       Handler: lambda_handler
-      Runtime:
-        Ref: PythonRuntime
-      Role:
-        Fn::GetAtt:
-        - ExecutionRole
-        - Arn
-      MemorySize:
-        Ref: MemorySize
-      Timeout:
-        Ref: Timeout
+      Runtime: !Ref PythonRuntime
+      Role: !GetAtt ExecutionRole.Arn
+      MemorySize: !Ref MemorySize
+      Timeout: !Ref Timeout
       Events:
         Stream:
           Type: DynamoDB
