@@ -2,3 +2,7 @@
 bucket = 'cfn-artifacts-ar'
 region = 'us-east-1'
 stack_name = 'CrdSrvBackendFlask'
+
+[parameters]
+EnvFrontendUrl = 'https://cloudproject.uk'
+EnvBackendUrl = 'https://api.cloudproject.uk'

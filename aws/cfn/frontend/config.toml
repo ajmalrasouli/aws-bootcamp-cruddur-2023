@@ -1,0 +1,10 @@
+[deploy]
+bucket = 'cfn-artifacts-ar'
+region = 'us-east-1'
+stack_name = 'CrdFrontend'
+
+[parameters]
+CertificateArn = 'arn:aws:acm:us-east-1:804789588521:certificate/2334c957-2ee6-4773-9748-aefbb3d415bd'
+WwwBucketName = 'www.cloudproject.uk'
+RootBucketName = 'cloudproject.uk'
+#HostedZoneId = 'Z056588915K2S2U894RJQ'
