@@ -1,4 +1,7 @@
 tasks:
+  - name: Script Task
+    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
+    command: echo 'start script'
   - name: aws-sam
     init: |
       cd /workspace
@@ -30,6 +33,7 @@ tasks:
       sudo apt install -y postgresql-client-13 libpq-dev
     command: |
       export GITPOD_IP=$(curl ifconfig.me)
+      gp env GITPOD_IP=$(curl ifconfig.me)
       source  "$THEIA_WORKSPACE_ROOT/bin/rds/update-sg-rule"
   - name: react-js
     command: |
@@ -58,7 +62,11 @@ vscode:
   extensions:
     - 42Crunch.vscode-openapi
     - cweijan.vscode-postgresql-client2
-
+    - ms-python.python  
+    - eamodio.gitlens
+    - mhutchie.git-graph
+    - ms-azuretools.vscode-docker
+    
 ports:
   - name: frontend
     port: 3000

@@ -8,6 +8,7 @@ import FormErrors from 'components/FormErrors';
 export default function ActivityForm(props) {
   const [count, setCount] = React.useState(0);
   const [message, setMessage] = React.useState('');
+  const [errors, setErrors] = React.useState('');
   const params = useParams();
 
   const classes = []
@@ -18,6 +19,7 @@ export default function ActivityForm(props) {
 
   const onsubmit = async (event) => {
     event.preventDefault();
+   
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/messages`
     let payload_data = { 'message': message }
     if (params.handle) {
@@ -29,15 +31,18 @@ export default function ActivityForm(props) {
       auth: true,
       setErrors: setErrors,
       success: function(){
-        console.log('data:',data)
-        if (data.message_group_uuid) {
+        console.log('data:',payload_data)
+        if (payload_data.message_group_uuid) {
           console.log('redirect to message group')
-          window.location.href = `/messages/${data.message_group_uuid}`
+          window.location.href = `/messages/${payload_data.message_group_uuid}`
         } else {
-          props.setMessages(current => [...current,data]);
+          props.setMessages(current => [...current,payload_data]);
         }
       }
-    })
+    // } catch (err) {
+    //   console.log(err);
+    // }
+  })
   }
 
   const textarea_onchange = (event) => {
