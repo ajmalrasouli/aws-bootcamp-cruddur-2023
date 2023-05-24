@@ -338,31 +338,108 @@ aws cloudformation describe-change-set --change-set-name arn:aws:cloudformation:
 }
 
 ```
+✅️ ${\color{lightblue}awscli \space Cloudformation \space package \space deploy}$
+---
 ![week-10-cloudformation-01](https://user-images.githubusercontent.com/88502375/235679064-33e34889-8339-4b00-b7ee-1b76af9d539e.jpg)
+
+✅️ ${\color{lightblue}awscli \space Cloudformation \space package \space deploy \space change \space set}$
+---
 ![week-10-cloudformation-change-set-02](https://user-images.githubusercontent.com/88502375/235679093-866f77e0-16a9-4f72-a165-e8fa078a69f1.jpg)
+
+✅️ ${\color{lightblue}Amazon \space S3 \space Buckets \space (cfn-aritfacts-ar)$
+---
 ![week-10-cloudformation-deploy-stack-03](https://user-images.githubusercontent.com/88502375/235679105-c5748808-9c13-4616-b2a3-d90e494b2196.jpg)
+
+✅️ ${\color{lightblue}Amazon \space S3 \space Buckets \space (cfn-aritfacts-ar)}$
+---
 ![week-10-cfn-artifacts-ar-04](https://user-images.githubusercontent.com/88502375/235679118-a03a0b3b-5776-4d35-bd68-c4bc1f7db251.jpg)
+
+✅️ ${\color{lightblue}List \space out \space the \space availability \space zone's \space for \space us-east-1 \space using \space ChatGPT)}$
+---
 ![week-10-azs-for-us-east-05](https://user-images.githubusercontent.com/88502375/235679110-f64af6e4-dbd8-4e3b-bfff-2c7bbd419033.jpg)
+
+✅️ ${\color{lightblue}Cruddur \space Cluster \space Stack \space change \space set$
+---
 ![week-10-crudur-stack-06](https://user-images.githubusercontent.com/88502375/235679341-f4947f75-8eb5-499f-80d4-b3c9eb186ef3.jpg)
+
+✅️ ${\color{lightblue}Change \space set$
+---
 ![week-10-crudur-stack--changes-07](https://user-images.githubusercontent.com/88502375/235679348-32ee4b5f-eeaf-499a-b485-fbfb5596cdbc.jpg)
+
+✅️ ${\color{lightblue}Cruddur \space stack \space info}$
+---
 ![week-10-crudur-stack-info-08](https://user-images.githubusercontent.com/88502375/235679369-4f7c8e84-686c-4879-a398-9db8f3251b17.jpg)
+
+✅️ ${\color{lightblue}Cruddur \space Stack \space Events}$
+---
 ![week-10-crudur-stack-events-09](https://user-images.githubusercontent.com/88502375/235679355-eb0068eb-4fb7-4529-a60b-08a593fe5327.jpg)
+
+✅️ ${\color{lightblue}Cruddur \space Stack \space Resources$
+---
 ![week-10-crudur-resources-10-1](https://user-images.githubusercontent.com/88502375/235679393-21247304-4b36-4ee7-9f0f-6383f8517dc1.jpg)
+
+✅️ ${\color{lightblue}Cruddur \space Stack \space Resources \space more...}$
+---
 ![week-10-crudur-stack-outputs-11](https://user-images.githubusercontent.com/88502375/235679373-bdc400e5-3fea-4845-a128-c52dd6fa7721.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-crudur-stack-parameters-12](https://user-images.githubusercontent.com/88502375/235679384-8b0f64e0-481d-4d19-a761-9f3dc694574b.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-crudurVPC-13](https://user-images.githubusercontent.com/88502375/235679832-76b418e9-f4d5-4a48-b3a4-48908b9fc1be.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CruddurVPC-Resource-map-14](https://user-images.githubusercontent.com/88502375/235679814-c3ff88c0-2732-4097-bf47-a4532e906793.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-crudur-diagram-16](https://user-images.githubusercontent.com/88502375/235679829-0c92fe42-a7aa-4fef-8b5e-ef260fea50f4.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdNet-stack-info-17](https://user-images.githubusercontent.com/88502375/235679743-a97b0666-7fda-4bae-ad62-04a6fd065b88.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdNet-stack-outputs-18](https://user-images.githubusercontent.com/88502375/235679760-9b289dfb-800f-40cc-ad94-124760ab38ea.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdNet-stack-parameters-19](https://user-images.githubusercontent.com/88502375/235679783-033f36fa-33cb-490a-aac2-aa79671d8ec5.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-networking-deploy-20](https://user-images.githubusercontent.com/88502375/235679843-b1feeb8b-df7b-4b00-8544-4ae50e9b2c55.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-cluster-deploy-21](https://user-images.githubusercontent.com/88502375/235679873-b787f9ea-6600-4772-9fad-0d9e70eb1911.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-cluster-deploy-22](https://user-images.githubusercontent.com/88502375/235679890-f3f7e5ad-80d5-4e56-8b98-d7ea4d10cb1c.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdNet-stacks-23](https://user-images.githubusercontent.com/88502375/235679799-9ffe3d2b-ad70-43b3-b456-76144e6e13ba.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdCluster-stack-info-24](https://user-images.githubusercontent.com/88502375/235679917-13a4dbc8-7af9-4fc2-9140-643f4cac8646.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdCluster-stack-resources-25](https://user-images.githubusercontent.com/88502375/235680000-1b0161b7-dc93-410f-abda-b2e0f5a54c34.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdCluster-stack-outputs-26](https://user-images.githubusercontent.com/88502375/235679960-7890833c-8171-485a-95f8-2c1876a415ce.jpg)
+
+✅️ ${\color{lightblue}Cloudformation \space deploy \space implementation}$
+---
 ![week-10-CrdCluster-stack-parameters-27](https://user-images.githubusercontent.com/88502375/235679976-b3ed7f8a-016b-4d8d-928f-81432e9ea8be.jpg)
 
 
