@@ -346,7 +346,7 @@ aws cloudformation describe-change-set --change-set-name arn:aws:cloudformation:
 ---
 ![week-10-cloudformation-change-set-02](https://user-images.githubusercontent.com/88502375/235679093-866f77e0-16a9-4f72-a165-e8fa078a69f1.jpg)
 
-✅️ ${\color{lightblue}Amazon \space S3 \space Buckets \space (cfn-aritfacts-ar)$
+✅️ ${\color{lightblue}Amazon \space S3 \space Buckets \space (cfn-aritfacts-ar)}$
 ---
 ![week-10-cloudformation-deploy-stack-03](https://user-images.githubusercontent.com/88502375/235679105-c5748808-9c13-4616-b2a3-d90e494b2196.jpg)
 
@@ -358,11 +358,11 @@ aws cloudformation describe-change-set --change-set-name arn:aws:cloudformation:
 ---
 ![week-10-azs-for-us-east-05](https://user-images.githubusercontent.com/88502375/235679110-f64af6e4-dbd8-4e3b-bfff-2c7bbd419033.jpg)
 
-✅️ ${\color{lightblue}Cruddur \space Cluster \space Stack \space change \space set$
+✅️ ${\color{lightblue}Cruddur \space Cluster \space Stack \space change \space set}$
 ---
 ![week-10-crudur-stack-06](https://user-images.githubusercontent.com/88502375/235679341-f4947f75-8eb5-499f-80d4-b3c9eb186ef3.jpg)
 
-✅️ ${\color{lightblue}Change \space set$
+✅️ ${\color{lightblue}Change \space set}$
 ---
 ![week-10-crudur-stack--changes-07](https://user-images.githubusercontent.com/88502375/235679348-32ee4b5f-eeaf-499a-b485-fbfb5596cdbc.jpg)
 
@@ -374,7 +374,7 @@ aws cloudformation describe-change-set --change-set-name arn:aws:cloudformation:
 ---
 ![week-10-crudur-stack-events-09](https://user-images.githubusercontent.com/88502375/235679355-eb0068eb-4fb7-4529-a60b-08a593fe5327.jpg)
 
-✅️ ${\color{lightblue}Cruddur \space Stack \space Resources$
+✅️ ${\color{lightblue}Cruddur \space Stack \space Resources}$
 ---
 ![week-10-crudur-resources-10-1](https://user-images.githubusercontent.com/88502375/235679393-21247304-4b36-4ee7-9f0f-6383f8517dc1.jpg)
 
