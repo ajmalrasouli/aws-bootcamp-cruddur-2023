@@ -32,7 +32,7 @@ export default function ActivityShowPage() {
       }
     })
   }
-  
+
   React.useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;

@@ -1,17 +1,14 @@
 import './UserFeedPage.css';
 import React from "react";
 import { useParams } from 'react-router-dom';
-
 import DesktopNavigation  from 'components/DesktopNavigation';
 import DesktopSidebar     from 'components/DesktopSidebar';
 import ActivityFeed from 'components/ActivityFeed';
 import ActivityForm from 'components/ActivityForm';
 import ProfileHeading from 'components/ProfileHeading';
 import ProfileForm from 'components/ProfileForm';
-
 import {get} from 'lib/Requests';
 import {checkAuth} from 'lib/CheckAuth';
-
 export default function UserFeedPage() {
   const [activities, setActivities] = React.useState([]);
   const [profile, setProfile] = React.useState([]);
@@ -22,12 +19,15 @@ export default function UserFeedPage() {
   const params = useParams();
 
   const loadData = async () => {
-    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/@${params.handle}`
-    get(url,null,function(data){
-      console.log('setprofile',data.profile)
-      setProfile(data.profile)
-      setActivities(data.activities)
+    
+    get(url,{
+      auth: false,
+      success: function(data){
+        console.log('setprofile',data.profile)
+        setProfile(data.profile)
+        setActivities(data.activities)
+      }
     })
   }
 

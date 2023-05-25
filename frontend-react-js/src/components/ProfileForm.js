@@ -4,7 +4,6 @@ import process from 'process';
 import {getAccessToken} from 'lib/CheckAuth';
 import {put} from 'lib/Requests';
 import FormErrors from 'components/FormErrors';
-
 export default function ProfileForm(props) {
   const [bio, setBio] = React.useState('');
   const [displayName, setDisplayName] = React.useState('');
@@ -69,19 +68,22 @@ export default function ProfileForm(props) {
       console.log(err);
     }
   }
-
   const onsubmit = async (event) => {
     event.preventDefault();
-    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/profile/update`
     const payload_data = {
       bio: bio,
       display_name: displayName
     }
-    put(url,payload_data,setErrors,function(data){
-      setBio(null)
-      setDisplayName(null)
-      props.setPopped(false)
+    
+    put(url,payload_data,{
+      auth: true,
+      setErrors: setErrors,
+      success: function(data){
+        setBio(null)
+        setDisplayName(null)
+        props.setPopped(false)
+      }
     })
   }
 
@@ -110,10 +112,7 @@ export default function ProfileForm(props) {
             </div>
           </div>
           <div className="popup_content">
-
-          
             <input type="file" name="avatarupload" onChange={s3upload} />
-
             <div className="field display_name">
               <label>Display Name</label>
               <input
