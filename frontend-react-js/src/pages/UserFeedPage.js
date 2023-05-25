@@ -19,18 +19,15 @@ export default function UserFeedPage() {
   const [poppedProfile, setPoppedProfile] = React.useState([]);
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
-
   const params = useParams();
 
   const loadData = async () => {
+    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/@${params.handle}`
-    get(url,{
-      auth: false,
-      success: function(data){
-        console.log('setprofile',data.profile)
-        setProfile(data.profile)
-        setActivities(data.activities)
-      }
+    get(url,null,function(data){
+      console.log('setprofile',data.profile)
+      setProfile(data.profile)
+      setActivities(data.activities)
     })
   }
 
@@ -38,11 +35,9 @@ export default function UserFeedPage() {
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-
     loadData();
     checkAuth(setUser);
   }, [])
-
   return (
     <article>
       <DesktopNavigation user={user} active={'profile'} setPopped={setPopped} />

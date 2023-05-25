@@ -1,6 +1,5 @@
 import './HomeFeedPage.css';
 import React from "react";
-
 import DesktopNavigation  from 'components/DesktopNavigation';
 import DesktopSidebar     from 'components/DesktopSidebar';
 import ActivityFeed from 'components/ActivityFeed';
@@ -19,24 +18,20 @@ export default function HomeFeedPage() {
   const dataFetchedRef = React.useRef(false);
 
   const loadData = async () => {
+    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/home`
-    get(url,{
-      auth: true,
-      success: function(data){
-        setActivities(data)
-      }
+    get(url,null,function(data){
+      setActivities(data)
     })
   }
-  
+
   React.useEffect(()=>{
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-
     loadData();
     checkAuth(setUser);
   }, [])
-
   return (
     <article>
       <DesktopNavigation user={user} active={'home'} setPopped={setPopped} />
@@ -50,6 +45,8 @@ export default function HomeFeedPage() {
           activity={replyActivity} 
           popped={poppedReply} 
           setPopped={setPoppedReply} 
+          setActivities={setActivities} 
+          activities={activities} 
         />
         <div className='activity_feed'>
           <div className='activity_feed_heading'>

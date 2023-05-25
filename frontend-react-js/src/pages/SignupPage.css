@@ -2,13 +2,11 @@ article.signup-article .signup-info {
   flex-grow: 1;
   padding-left: 12px;
 }
-
 article.signup-article .signup-info .logo {
   width: 140px;
   height: 140px;
   fill: #2021246c;
 }
-
 article.signup-article {
   display: flex;
   width: 100%;
@@ -16,7 +14,6 @@ article.signup-article {
   justify-content: flex-start;
   background: #8819f5;
 }
-
 article.signup-article .signup-wrapper {
   background: #202124;
   width: 760px;
@@ -28,13 +25,11 @@ article.signup-article form {
   padding: 0px 120px;
   flex-grow: 1;
 }
-
 article.signup-article label {
   padding: 4px 0px;
   display: block;
   color: rgba(255,255,255,0.6);
 }
-
 article.signup-article input[type='text'],
 article.signup-article input[type='password'] {
   font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +46,6 @@ article.signup-article input[type='password'] {
   background: #1f1f1f;
   color: #fff;
 }
-
 .field.email {
   margin-top: 16px;
 }
@@ -61,12 +55,10 @@ article.signup-article input[type='password'] {
 .field.password {
   margin-top: 16px;
 }
-
 article.signup-article input[type='text']:focus ,
 article.signup-article input[type='password']:focus {
   border: solid 1px var(--field-border-focus);
 }
-
 article.signup-article .submit {
   margin-top: 24px;
   display: flex;
@@ -74,19 +66,15 @@ article.signup-article .submit {
   justify-content: space-between;
   align-items: center;
 }
-
 article.signup-article  h2 {
   text-align: center;
   color: #fff;
 }
-
 article.signin-article a.forgot-link {
   color: #fff;
   font-weight: 600;
   text-decoration: none;
 }
-
-
 article.signup-article button[type='submit'] {
   font-weight: 800;
   outline: none;
@@ -97,7 +85,6 @@ article.signup-article button[type='submit'] {
   background: rgba(149,0,255,1);
   color: #fff;
 }
-
 .already-have-an-account {
   background: #252525;
   padding: 24px;

@@ -1,24 +1,19 @@
 import {getAccessToken} from 'lib/CheckAuth';
 
-async function request(method,url,payload_data,options){
-  console.log(options)
-  if (options.hasOwnProperty('setErrors')){
-    options.setErrors('')
+async function request(method,url,payload_data,setErrors,success){
+  if (setErrors !== null){
+    setErrors('')
   }
   let res
   try {
-
+    await getAccessToken()
+    const access_token = localStorage.getItem("access_token")
     const attrs = {
       method: method,
       headers: {
+        'Authorization': `Bearer ${access_token}`,
         'Content-Type': 'application/json'
       }
-    }
-
-    if (options.hasOwnProperty('auth') && options.auth === true){
-      await getAccessToken()
-      const access_token = localStorage.getItem("access_token")
-      attrs.headers['Authorization'] = `Bearer ${access_token}`
     }
 
     if (method !== 'GET') {
@@ -28,10 +23,10 @@ async function request(method,url,payload_data,options){
     res = await fetch(url,attrs)
     let data = await res.json();
     if (res.status === 200) {
-      options.success(data)
+      success(data)
     } else {
       if (setErrors !== null){
-        options.setErrors(data)
+        setErrors(data)
       }
       console.log(res,data)
     }
@@ -39,29 +34,29 @@ async function request(method,url,payload_data,options){
     console.log('request catch',err)
     if (err instanceof Response) {
         console.log('HTTP error detected:', err.status); // Here you can see the status.
-        if (options.hasOwnProperty('setErrors')){
-          options.setErrors([`generic_${err.status}`]) // Just an example. Adjust it to your needs.
+        if (setErrors !== null){
+          setErrors([`generic_${err.status}`]) // Just an example. Adjust it to your needs.
         }
     } else {
-      if (options.hasOwnProperty('setErrors')){
-        options.setErrors([`generic_500`]) // For network errors or any other errors
+      if (setErrors !== null){
+        setErrors([`generic_500`]) // For network errors or any other errors
       }
     }
   }
 }
 
-export function post(url,payload_data,options){
-  request('POST',url,payload_data,options)
+export function post(url,payload_data,setErrors,success){
+  request('POST',url,payload_data,setErrors,success)
 }
 
-export function put(url,payload_data,options){
-  request('PUT',url,payload_data,options)
+export function put(url,payload_data,setErrors,success){
+  request('PUT',url,payload_data,setErrors,success)
 }
 
-export function get(url,options){
-  request('GET',url,null,options)
+export function get(url,setErrors,success){
+  request('GET',url,null,setErrors,success)
 }
 
-export function destroy(url,payload_data,options){
-  request('DELETE',url,payload_data,options)
+export function destroy(url,payload_data,setErrors,success){
+  request('DELETE',url,payload_data,setErrors,success)
 }

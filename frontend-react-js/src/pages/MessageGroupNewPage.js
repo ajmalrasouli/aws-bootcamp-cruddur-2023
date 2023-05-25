@@ -20,23 +20,19 @@ export default function MessageGroupPage() {
   const params = useParams();
 
   const loadUserShortData = async () => {
+      
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/users/@${params.handle}/short`
-    get(url,{
-      auth: true,
-      success: function(data){
-        console.log('other user:',data)
-        setOtherUser(data)
-      }
+    get(url,null,function(data){
+      console.log('other user:',data)
+      setOtherUser(data)
     })
   }
 
   const loadMessageGroupsData = async () => {
+    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/message_groups`
-    get(url,{
-      auth: true,
-      success: function(data){
-        setMessageGroups(data)
-      }
+    get(url,null,function(data){
+      setMessageGroups(data)
     })
   };  
 
@@ -44,7 +40,6 @@ export default function MessageGroupPage() {
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-
     loadMessageGroupsData();
     loadUserShortData();
     checkAuth(setUser);

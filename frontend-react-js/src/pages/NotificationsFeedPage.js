@@ -19,12 +19,10 @@ export default function NotificationsFeedPage() {
   const dataFetchedRef = React.useRef(false);
 
   const loadData = async () => {
+    
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/notifications`
-    get(url,{
-      auth: true,
-      success: function(data){
-        setActivities(data)
-      }
+    get(url,null,function(data){
+      setActivities(data)
     })
   };
 
@@ -32,11 +30,9 @@ export default function NotificationsFeedPage() {
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-
     loadData();
     checkAuth(setUser);
   }, [])
-
   return (
     <article>
       <DesktopNavigation user={user} active={'notifications'} setPopped={setPopped} />
