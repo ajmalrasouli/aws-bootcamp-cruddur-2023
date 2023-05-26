@@ -4,9 +4,12 @@ import process from 'process';
 import {getAccessToken} from 'lib/CheckAuth';
 import {put} from 'lib/Requests';
 import FormErrors from 'components/FormErrors';
+
 export default function ProfileForm(props) {
   const [bio, setBio] = React.useState('');
   const [displayName, setDisplayName] = React.useState('');
+  const [errors, setErrors] = React.useState('');
+
   React.useEffect(()=>{
     setBio(props.profile.bio || '');
     setDisplayName(props.profile.display_name);
@@ -75,7 +78,6 @@ export default function ProfileForm(props) {
       bio: bio,
       display_name: displayName
     }
-    
     put(url,payload_data,{
       auth: true,
       setErrors: setErrors,
@@ -86,7 +88,6 @@ export default function ProfileForm(props) {
       }
     })
   }
-
   const bio_onchange = (event) => {
     setBio(event.target.value);
   }
