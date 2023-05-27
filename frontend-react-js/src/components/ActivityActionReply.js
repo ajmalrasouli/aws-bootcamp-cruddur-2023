@@ -7,12 +7,10 @@ export default function ActivityActionReply(props) {
     props.setPopped(true)
     return false
   }
-
   let counter;
   if (props.count > 0) {
     counter = <div className="counter">{props.count}</div>;
   }
-
   return (
     <div onClick={onclick} className="action activity_action_reply">
       <ReplyIcon className='icon' />

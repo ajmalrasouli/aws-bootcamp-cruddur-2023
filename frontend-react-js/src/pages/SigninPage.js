@@ -7,12 +7,12 @@ import FormErrors from 'components/FormErrors';
 import { Auth } from 'aws-amplify';
 
 export default function SigninPage() {
-
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [errors, setErrors] = React.useState('');
 
   const onsubmit = async (event) => {
+    
     event.preventDefault();
     setErrors('')
     Auth.signIn(email, password)
@@ -29,7 +29,6 @@ export default function SigninPage() {
     });
     return false
   }
-
   const email_onchange = (event) => {
     setEmail(event.target.value);
   }
@@ -37,6 +36,7 @@ export default function SigninPage() {
     setPassword(event.target.value);
   }
 
+  
   return (
     <article className="signin-article">
       <div className='signin-info'>
@@ -66,12 +66,12 @@ export default function SigninPage() {
               />
             </div>
           </div>
+          
           <FormErrors errors={errors} />
           <div className='submit'>
             <Link to="/forgot" className="forgot-link">Forgot Password?</Link>
             <button type='submit'>Sign In</button>
           </div>
-
         </form>
         <div className="dont-have-an-account">
           <span>
@@ -80,7 +80,6 @@ export default function SigninPage() {
           <Link to="/signup">Sign up!</Link>
         </div>
       </div>
-
     </article>
   );
 }

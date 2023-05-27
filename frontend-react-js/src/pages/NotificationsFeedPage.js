@@ -1,15 +1,12 @@
 import './NotificationsFeedPage.css';
 import React from "react";
-
 import DesktopNavigation  from 'components/DesktopNavigation';
 import DesktopSidebar     from 'components/DesktopSidebar';
 import ActivityFeed from 'components/ActivityFeed';
 import ActivityForm from 'components/ActivityForm';
 import ReplyForm from 'components/ReplyForm';
-
 import {get} from 'lib/Requests';
 import {checkAuth} from 'lib/CheckAuth';
-
 export default function NotificationsFeedPage() {
   const [activities, setActivities] = React.useState([]);
   const [popped, setPopped] = React.useState(false);
@@ -20,6 +17,7 @@ export default function NotificationsFeedPage() {
 
   const loadData = async () => {
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities/notifications`
+    
     get(url,{
       auth: true,
       success: function(data){
@@ -32,11 +30,9 @@ export default function NotificationsFeedPage() {
     //prevents double call
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-
     loadData();
     checkAuth(setUser);
   }, [])
-
   return (
     <article>
       <DesktopNavigation user={user} active={'notifications'} setPopped={setPopped} />

@@ -13,4 +13,10 @@ VALUES
     (SELECT uuid from public.users WHERE users.handle = 'ajmalrasouli' LIMIT 1),
     'This was imported as seed data!',
     current_timestamp + interval '10 day'
+  ),
+  (
+    (SELECT uuid from public.users WHERE users.handle = 'ajmalteq' LIMIT 1),
+    'I am the other!',
+    current_timestamp + interval '10 day'
   )
+  );

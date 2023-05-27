@@ -4,19 +4,16 @@ import process from 'process';
 import {ReactComponent as BombIcon} from './svg/bomb.svg';
 import {post} from 'lib/Requests';
 import FormErrors from 'components/FormErrors';
-
 export default function ActivityForm(props) {
   const [count, setCount] = React.useState(0);
   const [message, setMessage] = React.useState('');
   const [ttl, setTtl] = React.useState('7-days');
   const [errors, setErrors] = React.useState([]);
-
   const classes = []
   classes.push('count')
   if (240-count < 0){
     classes.push('err')
   }
-
   const onsubmit = async (event) => {
     event.preventDefault();
     const url = `${process.env.REACT_APP_BACKEND_URL}/api/activities`
@@ -24,6 +21,7 @@ export default function ActivityForm(props) {
       message: message,
       ttl: ttl
     }
+    
     post(url,payload_data,{
         auth: true,
         setErrors: setErrors,
@@ -43,11 +41,9 @@ export default function ActivityForm(props) {
     setCount(event.target.value.length);
     setMessage(event.target.value);
   }
-
   const ttl_onchange = (event) => {
     setTtl(event.target.value);
   }
-
   if (props.popped === true) {
     return (
       <form 

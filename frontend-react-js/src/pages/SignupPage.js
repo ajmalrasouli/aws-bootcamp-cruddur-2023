@@ -7,14 +7,12 @@ import FormErrors from 'components/FormErrors';
 import { Auth } from 'aws-amplify';
 
 export default function SignupPage() {
-
   // Username is Eamil
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [errors, setErrors] = React.useState('');
-
   const onsubmit = async (event) => {
     event.preventDefault();
     setErrors('')
@@ -42,7 +40,6 @@ export default function SignupPage() {
     }
     return false
   }
-
   const name_onchange = (event) => {
     setName(event.target.value);
   }
@@ -56,6 +53,7 @@ export default function SignupPage() {
     setPassword(event.target.value);
   }
 
+  
   return (
     <article className='signup-article'>
       <div className='signup-info'>
@@ -76,7 +74,6 @@ export default function SignupPage() {
                 onChange={name_onchange} 
               />
             </div>
-
             <div className='field text_field email'>
               <label>Email</label>
               <input
@@ -85,7 +82,6 @@ export default function SignupPage() {
                 onChange={email_onchange} 
               />
             </div>
-
             <div className='field text_field username'>
               <label>Username</label>
               <input
@@ -94,7 +90,6 @@ export default function SignupPage() {
                 onChange={username_onchange} 
               />
             </div>
-
             <div className='field text_field password'>
               <label>Password</label>
               <input
@@ -104,6 +99,7 @@ export default function SignupPage() {
               />
             </div>
           </div>
+          
           <FormErrors errors={errors} />
           <div className='submit'>
             <button type='submit'>Sign Up</button>
