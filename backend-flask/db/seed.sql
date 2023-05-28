@@ -18,5 +18,4 @@ VALUES
     (SELECT uuid from public.users WHERE users.handle = 'ajmalteq' LIMIT 1),
     'I am the other!',
     current_timestamp + interval '10 day'
-  )
   );
