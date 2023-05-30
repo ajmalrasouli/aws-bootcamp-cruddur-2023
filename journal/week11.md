@@ -2,10 +2,9 @@
 
 ## Required Homework/Tasks
 
-Final Cruddur Network Diagram using draw.io
+### Final Cruddur Network Diagram using draw.io
 
-
-<img src="https://raw.githubusercontent.com/ajmalrasouli/aws-bootcamp-cruddur-2023/d6ff9e9ac9c20c65224d65d042e1530303b2e863/journal/assets/Network%20Diagram.drawio.svg" alt="network diagram" title="cruddur network diagram" style="max-width: 100%;">
+<img src="https://github.com/ajmalrasouli/aws-bootcamp-cruddur-2023/assets/88502375/df2001c8-e4e3-4562-924f-c4be074cb356" alt="network diagram" title="cruddur network diagram" style="max-width: 100%;">
 
 
 ✅️ ${\color{lightblue}Cruddur \space Service \space Stack}$
